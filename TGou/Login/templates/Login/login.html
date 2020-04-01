@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="margin: 15% 40%;">
+        <h1>欢迎登录！</h1>
+        <form action="/api/v1.0/TGou/login" method="post">
+            {% csrf_token %}
+            {% if message %}
+                <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+            {#  通过{{ login_form.****.label_tag }}获取每一个字段，然后分别渲染 #}
+            {#  login_form 视图函数传过来的表单对象  #}
+            <div class="form-group">
+                {{ login_form.username.label_tag }}
+                {{ login_form.username }}
+            </div>
+            <div class="form-group">
+                {{ login_form.password.label_tag }}
+                {{ login_form.password }}
+            </div>
+            <div class="form-group">
+                {{ login_form.captcha.errors }}
+                {{ login_form.captcha.label_tag }}
+                {{ login_form.captcha }}
+            </div>
+            <button type="reset" class="btn btn-default pull-left">重置</button>
+            <button type="submit" class="btn btn-primary pull-right">提交</button>
+        </form>
+    </div>
+
+{% endblock %}
