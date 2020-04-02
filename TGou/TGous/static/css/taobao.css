@@ -7,12 +7,19 @@ li{
 	list-style:none;
 	
 }
+/*body{*/
+/*	background-color: #f8f8f8;*/
+/*}*/
 .hdd{
-	width:100%;
-	height:38px;	
-	min-width:1192px;
-	background:#f6f6f6;
 	border:1px solid #efefef;
+	border-radius: 10px;
+	width:100%;
+	height:38px;
+	min-width:1192px;
+	background-color: #f8f8f8;
+	margin-top: 1px;
+	margin-bottom: 5px;
+
 }
 .hdx{
 	width:1192px;
@@ -21,35 +28,49 @@ li{
 	
 }
 .hd_left{
+	font-weight: bold;
 	float:left;
 	line-height:38px;
 	margin-left:110px;
 	font-size:12px;
 	color:#c2c2c2;
 }
+.hd_left>li>a{
+	text-decoration:none;
+	color: #777777;
+}
+.hd_left>li>a:hover{
+	color: orangered;
+}
 .hd_left>li>i{
 	font-size:6px;
 	color:#ccc;
 	padding-left:10px;
-	
 }
 .hd_left>li{
 	float:left;
 	padding-left:16px;
 }
-.hd_left>li:hover{
-	color:red;
-}
+
 .hd_right{
 	float:right;
 	line-height:38px;
 	margin-right:110px;
 	font-size:12px;
+	font-weight: bold;
 	color:black;
 
 }
 
+.hd_right>li>a{
+	text-decoration:none;
+	color: #777777;
+}
+.hd_right>li>a:hover{
+	color: orangered;
+}
 .hd_right>li{
+
 	float:left;
 	padding-left:14px;
 	text-align:center;
@@ -61,9 +82,7 @@ li{
 .hd_right>li:nth-of-type(1){
 	color:#ff0000;
 }
-.hd_right>li:hover{
-	color:red;
-}
+
 .wanzhan{
 	position:relative;
 }
@@ -90,7 +109,7 @@ li{
 	width:100%;
 	height:90px;	
 	min-width:1192px;
-	background:red;
+	background:transparent;
 	}
 .tutu{
 	width:1192px;
@@ -98,6 +117,7 @@ li{
 	margin:0 auto;
 	}
 .inp{
+	margin-top: 40px;
 	width:100%;
 	height:114px;	
 	min-width:1192px;
@@ -111,8 +131,8 @@ li{
 	}
 
 .aitao{
-	margin-top:23px;
-	margin-left:20px ;
+	margin-top:0px;
+	margin-left:0px ;
 	float:left;
 }
 
@@ -122,16 +142,20 @@ li{
 	width:708px;
 	height:80px;
 }
-.sousuo>input{
+.sousuo>form>input{
 	width:608px;
 	height:39px;
-	border:3px solid red;
+	border:2px solid red;
 	outline:none;
 	float:left;
+	border-radius:5px;
 }
-.ss{
+.sousuo>form>button{
+	margin-left: 1px ;
+	border:1px solid red;
+	border-radius: 5px;
 	width:90px;
-	height:45px;
+	height:43px;
 	font-size:20px;
 	color:#fff;
 	background:red;
@@ -146,19 +170,16 @@ li{
 	float:left;
 	padding-top:10px;
 }
-.sousuo>span:nth-of-type(1){
-	padding-left:0;
+.sousuo>span:hover{
 	color:red;
 }
-.sousuo>span:nth-of-type(6){
-	color:red;
-}
+
 .navd{
 	width:100%;
 	height:40px;	
 	min-width:1192px;
 	background:#fff;
-	border-bottom:1px solid red;
+	border-bottom:1px solid transparent;
 
 }
 .navx{
@@ -168,8 +189,8 @@ li{
 	
 }
 .imgss{
-	width: 165px;
-	height: 80px;
+	width: 238px;
+	height: 114px;
 }
 .mrb{
 	width:150px;
@@ -527,11 +548,12 @@ li{
 	float:right;
 }
 .meinv{
-	width:187px;
-	height:214px;
-	border:1px solid #F7F7F7;
 	float:left;
-	
+	border:1px solid white;
+}
+.meinv>img{
+	width:187px;
+	height:220px;
 }
 .kk{
 	width:100%;

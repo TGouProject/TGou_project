@@ -7,15 +7,18 @@ from Login.tool_fun import make_confirm_string, send_email
 import datetime
 
 
-# 测试视图
-def hellodog(request):
-    return HttpResponse('Hello TGou')
-
-
-# 首页视图
+# 首页界面控制
 def index(request):
-    pass
-    return render(request, 'Login/index.html')
+    longin_state = '登陆'
+    logout = '退出'
+    login_url = 'login'
+    user_info = 'user_info'
+    username = request.session.get('user_name')
+    if username:
+        longin_state = username
+        return render(request, 'TGou_page/index.html',
+                      {'login_state': longin_state, 'logout': logout, 'login_url': user_info})
+    return render(request, 'TGou_page/index.html', {'login_state': longin_state, 'login_url': login_url})
 
 
 # 登录视图
@@ -151,3 +154,8 @@ def user_confirm(request):
         confirm.delete()
         message = '感谢确认，请使用账户登录！'
         return render(request, 'Login/confirm.html', locals())
+
+
+# 用户个人信息
+def userinfo(request):
+    return HttpResponse('userinfo')

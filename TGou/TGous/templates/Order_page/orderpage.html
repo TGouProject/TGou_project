@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>订单-确认订单</title>
+</head>
+{% load static %}
+<body class="cart-app">
+    <!-- 主内容区域 -->
+    <div class="mainbody cart">
+        <div class="container">
+            <!-- 购物车详情头 -->
+            <table class="cart-header">
+                <tbody>
+                    <tr>
+                        <td class="cart-col-select col-md-3 col-xs-3 col-sm-3">
+                            <img src="{% static "/images/images/images/images/images/images/1.jpg" %}" alt="">
+                        </td>
+                        <td class="cart-col-name col-md-3 hidden-xs hidden-sm">商品xxxxxxxxxxxx信息</td>
+                        <td class="cart-col-price col-md-2 hidden-xs hidden-sm">单价xxxxx(元)</td>
+                        <td class="cart-col-number col-md-2 hidden-xs hidden-sm">xx数量</td>
+                        <td class="cart-col-total col-md-1 hidden-xs hidden-sm">小计xxx(元)</td>
+                    </tr>
+                </tbody>
+            </table><!-- 购物车详情头 E-->
+            <!-- 购物清单信息列表 -->
+            <div class="cart-merchant-list">
+                <div class="cart-merchant">
+                    <table class="cart-merchant-body">
+                        <tbody>
+                        {% for v in goods %}
+                            <tr class="cart-product" id="pro5">
+                                <td class="cart-col-select col-md-3 col-xs-4 col-sm-4">
+                                    <a href="#" class="cart-product-link" target="_blank">
+                                        <img src="/static/goods/{{ v.picname }}" class="cart-product-img" alt="魅蓝 X">
+                                    </a>
+                                </td>
+                                <td class="cart-col-name col-md-3 col-xs-8 col-sm-8">
+                                    <a href="#" class="cart-product-link" target="_blank">
+                                      <span class="cart-product-desc">{{ v.title }}</span>
+                                    </a>
+
+                                </td>
+                                <td class="cart-col-price col-md-2 hidden-xs hidden-sm">
+                                    <p>
+                                        <span class="cart-product-price">{{ v.price }}</span>
+                                    </p>
+                                </td>
+                                <td class="cart-col-number col-md-2 hidden-xs hidden-sm">
+                                    <div class="cart-product-number-adder">
+                                        <p class="cart-product-number-max show"></p>
+                                        <p>{{ v.num }}</p>
+                                    </div>
+                                </td>
+                                <td class="cart-col-total col-md-1 hidden-xs hidden-sm">
+                                    <span class="cart-product-price total">{% widthratio v.num 1 v.price %}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- 购物清单信息列表 E-->
+        </div>
+        <br>
+        <form action="#" method="post">
+            {% csrf_token %}
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-10"  style="background:#f5f5f5">
+
+
+                        收货人: <input type="text" name="uname">
+                        收货地址:<input type="text" name="address">
+                        收货电话:<input type="text" name="phone">
+                        邮编:<input type="text" name="pcode">
+                        <input type="hidden" name="total" value="{{ total }}">
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- 结算详情 -->
+        <div class="cart-footer" id="cartFooter">
+            <div class="container">
+
+               <div class="cart-footer-left col-md-6 col-xs-4 col-sm-4">
+
+
+                   <!-- <span class="cart-remove-selected" id="removeSelected">删除选中的商品</span> -->
+                   <span class="cart-footer-count">
+                        共
+                        <span class="cart-footer-num" id="totalCount">{{ subnum }}</span>
+                        件商品
+                   </span>
+                </div>
+                <div class="cart-footer-right col-md-5 col-md-offset-1 col-sm-offset-2 col-xs-8 col-sm-6">
+                    <span class="cart-footer-sum">
+                        <span class="cart-footer-text">已优惠</span>
+                        <span class="cart-footer-num red" id="totalDiscount">0.00</span>
+                        <span class="cart-footer-text">元， 合计(不含运费)：</span>
+                        <span class="cart-footer-total" id="totalPrice">{{ total }}</span>
+                    </span>
+                    <button class="mz-btn success" id="cartSubmit">提交订单</button>
+                    <button class="mz-btn success" id="cartSubmit">删除订单</button>
+
+                </div>
+            </div>
+        </div><!-- 结算详情 E-->
+        </form>
+    </div>
+    <!-- 主内容区域 E-->
+
+</body>
+
+</html>
+{% endblock %}
