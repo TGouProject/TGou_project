@@ -1,2 +1,0 @@
-EMAIL_HOST_USER = '2287601741@qq.com'
-EMAIL_HOST_PASSWORD = 'pbjrvxnpcuyidibb'
