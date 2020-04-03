@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{ user_name }}的个人信息{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="user_info" method="post">
+    {% csrf_token %}
+    {% if user_name %}
+        <p>用户名:{{ user_name }}</p>
+        <p>邮箱:{{ user_email }}</p>
+        <p>性别:{{ user_sex }}</p>
+        收获地址:<input type="text" name="address" value={{ user_address }}>
+        <input type="submit" value="修改">
+    {% else %}
+        <p>{{ info }}</p>
+    {% endif %}
+</form>
+
+</body>
+</html>
+{% endblock %}

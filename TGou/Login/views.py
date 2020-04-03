@@ -5,6 +5,8 @@ from Login import models
 from Login.forms import UserForm, RegisterForm
 from Login.tool_fun import make_confirm_string, send_email
 import datetime
+from Login.models import User
+from django.views import View
 
 
 # 首页界面控制
@@ -13,11 +15,17 @@ def index(request):
     logout = '退出'
     login_url = 'login'
     user_info = 'user_info'
+    info = '完善个人信息'
     username = request.session.get('user_name')
     if username:
-        longin_state = username
-        return render(request, 'TGou_page/index.html',
-                      {'login_state': longin_state, 'logout': logout, 'login_url': user_info})
+        user = User.objects.get(name=username)
+        if user.shopping_address != None:
+            longin_state = username
+            return render(request, 'TGou_page/index.html',
+                          {'login_state': longin_state, 'logout': logout, 'login_url': user_info})
+        else:
+            return render(request, 'TGou_page/index.html',
+                          {'login_state': longin_state, 'logout': logout, 'login_url': user_info, 'info': info})
     return render(request, 'TGou_page/index.html', {'login_state': longin_state, 'login_url': login_url})
 
 
@@ -59,7 +67,6 @@ def login(request):
         # 验证没通过会返回一个包含先前数据的表单给前端页面，方便用户修改
         # locals() Python内置函数,它返回当前所有的本地变量字典不用去构造字典,例如:{'message':message, 'login_form':login_form},但是同时也可能往模板传入了一些多余的变量数据，造成数据冗余降低效率。
         return render(request, 'Login/login.html', locals())
-
     # GET请求返回空的表单,用于用户登录
     login_form = UserForm()
     return render(request, 'Login/login.html', locals())
@@ -94,7 +101,6 @@ def register(request):
                     return render(request, 'Login/register.html', locals())
 
                 # 当一切都OK的情况下，创建新用户
-
                 new_user = models.User.objects.create()
                 new_user.name = username
                 new_user.password = password1
@@ -157,5 +163,30 @@ def user_confirm(request):
 
 
 # 用户个人信息
-def userinfo(request):
-    return HttpResponse('userinfo')
+class UserInfo(View):
+    def get(self, request):
+        info = '用户不存在'
+        username = request.session.get('user_name')
+        if username:
+            user = User.objects.get(name=username)
+            user_sex = user.sex
+            user_email = user.email
+            user_name = user.name
+            user_address = user.shopping_address
+            return render(request, 'TGou_page/user_info.html',
+                          {'user_sex': user_sex, 'user_email': user_email, 'user_name': user_name,
+                           'user_address': user_address})
+        return render(request, 'TGou_page/user_info.html', {'info': info})
+
+    def post(self, request):
+        username = request.session.get('user_name')
+        if username:
+            user = User.objects.get(name=username)
+            if user:
+                address = request.POST.get('address')
+                user.shopping_address = address
+                user.save()
+                message = '新的地址保存成功'
+                return render(request,'TGou_page/save_success.html',{'message':message})
+            return HttpResponse('用户信息不存在')
+        return HttpResponse('请先登陆在尝试添加')

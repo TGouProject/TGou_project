@@ -15,6 +15,8 @@ class User(models.Model):
     c_time = models.DateTimeField(auto_now_add=True)
     # 是否进行了邮件确认
     has_confirmed = models.BooleanField(default=False)
+    #收货地址
+    shopping_address = models.CharField(max_length=200,default=None,null=True)
 
     def __str__(self):
         return self.name

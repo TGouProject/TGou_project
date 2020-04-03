@@ -69,8 +69,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'TGou_sql',
-        'USER': 'database_namet',
-        'PASSWORD': 'database_pwd',
+        'USER': 'root',
+        'PASSWORD': 'jace666',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     },

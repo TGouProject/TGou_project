@@ -2,6 +2,16 @@ import datetime
 import hashlib
 from Login import models
 from TGou import settings
+from Login.forms import RegisterForm
+import django
+import os
+from django.http import HttpRequest
+
+
+#配置django运行环境
+os.environ['DJANGO_SETTINGS_MODULE'] = 'TGou.settings'
+django.setup()
+
 
 
 # 生成hash值

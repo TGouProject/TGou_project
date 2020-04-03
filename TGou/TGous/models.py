@@ -36,5 +36,23 @@ class TGou_Order(models.Model):
         order_number = self.ordedr_number
         return self.order_info+'\n'+order_number.replace('-','')
 
+class Tgshoppings(models.Model):
+    #商品名
+    shopping_name = models.CharField(max_length=100)
+    #价格
+    shopping_price = models.CharField(max_length=45)
+    #信息
+    shopping_info = models.CharField(max_length=500)
+    #种类
+    shopping_type = models.CharField(max_length=45)
+    #销量
+    shopping_sv = models.CharField(max_length=100)
+    #图片url
+    shopping_photo = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.shopping_name
+
+
 
 
