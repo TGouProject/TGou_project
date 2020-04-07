@@ -1,8 +1,10 @@
 from django.db import models
-import hashlib
+from Login.models import User
+
+
 class TGou_Order(models.Model):
     #订单号
-    ordedr_number = models.CharField(max_length=200,default=None,unique=True)
+    ordedr_number = models.CharField(max_length=200,unique=True,default=None)
     #订单信息,商品名称
     order_info =models.CharField(max_length=200)
     # 商品数量
@@ -12,11 +14,16 @@ class TGou_Order(models.Model):
     #订单分类,已完成,未完成,退货订单....
     order_type = models.CharField(max_length=15)
     #订单日期
-    order_data = models.DateField()
+    order_data = models.DateField(auto_now=True)
     #交易状态
     order_state = models.CharField(max_length=10)
     #收货地址
-    shipping_address = models.CharField(max_length=150,default=None)
+    shipping_address = models.CharField(max_length=150,null=True,blank=True)
+    # manytomany
+    shopping = models.ManyToManyField('Tgshoppings',name='orders')
+    # 外键
+    user = models.ForeignKey('Login.User', on_delete=models.DO_NOTHING)
+
 
     def to_dict(self):
         return {
@@ -38,7 +45,7 @@ class TGou_Order(models.Model):
 
 class Tgshoppings(models.Model):
     #商品名
-    shopping_name = models.CharField(max_length=100)
+    shopping_name = models.CharField(max_length=100,unique=True)
     #价格
     shopping_price = models.CharField(max_length=45)
     #信息
@@ -49,6 +56,7 @@ class Tgshoppings(models.Model):
     shopping_sv = models.CharField(max_length=100)
     #图片url
     shopping_photo = models.CharField(max_length=500)
+
 
     def __str__(self):
         return self.shopping_name

@@ -9,24 +9,7 @@ from Login.models import User
 from django.views import View
 
 
-# 首页界面控制
-def index(request):
-    longin_state = '登陆'
-    logout = '退出'
-    login_url = 'login'
-    user_info = 'user_info'
-    info = '完善个人信息'
-    username = request.session.get('user_name')
-    if username:
-        user = User.objects.get(name=username)
-        if user.shopping_address != None:
-            longin_state = username
-            return render(request, 'TGou_page/index.html',
-                          {'login_state': longin_state, 'logout': logout, 'login_url': user_info})
-        else:
-            return render(request, 'TGou_page/index.html',
-                          {'login_state': longin_state, 'logout': logout, 'login_url': user_info, 'info': info})
-    return render(request, 'TGou_page/index.html', {'login_state': longin_state, 'login_url': login_url})
+
 
 
 # 登录视图
@@ -59,9 +42,8 @@ def login(request):
                             # request.session['user_id'] = user.id
                             request.session['user_name'] = user.name
                             return redirect('/api/v1.0/TGou/index')
-                    else:
-                        message = '用户名或密码错误'
-                        break
+                else:
+                    message = '用户名或密码错误'
             except:
                 message = '用户不存在'
         # 验证没通过会返回一个包含先前数据的表单给前端页面，方便用户修改

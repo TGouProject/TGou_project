@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" name="referrer" content="never"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static '/font/iconfont.css' %}"/>
@@ -19,8 +20,6 @@
         <ul class="hd_right">
             <li><a href="mytgou" target="_blank">我的TGou</a></li>
             <li><a href="shopping_car" target="_blank">购物车</a></li>
-            <li><a href="favorite" target="_blank">收藏夹</a></li>
-            <li><a href="shopping_type" target="_blank">商品分类</a></li>
             <li>|</li>
             <li><a href="service_centre" target="_blank">服务中心</a></li>
         </ul>
@@ -57,15 +56,7 @@
             <li>9.9疯抢<i class="icon iconfont icon-xiangxia"></i></li>
             <li>聚划算</li>
             <li>掏抢购</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
-            <li>TGou药房</li>
+
         </ul>
     </div>
 </div>
@@ -130,60 +121,16 @@
                     <span>数码配件</span>
                 </p>
             </div>
-
+{# 右上 #}
             <div class="uou">
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
-                <div class="aa">
-                    <img src="{% static "/images/images/images/images/images/images/1.jpg" %}"/>
-                    <span style="font-size:12px;color:#ccc;">￥</span>
-                    <span style="font-size:22px;color:red;">45.00</span>
-                    <span style="font-size:12px;color:#ccc;"><del>￥138.00</del></span>
-                </div>
+                {% for photo in shoppings %}
+                    <a class="aa" target="_blank" methods="get" href="shopp_info/{{ photo.shopping_name }}">
+                        <img class=right_head src={{ photo.shopping_photo }}/>
+                        <span class="aspan">{{ photo.shopping_price }}</span>
+                    </a>
+                {% endfor %}
             </div>
-
         </div>
-
     </div>
 </div>
 <div class="nvlan">
@@ -192,7 +139,7 @@
             <p class="mlnv">
                 魅力女人
             </p>
-            <img src="{% static "/images/images/images/images/images/images/QQ浏览器截图20190727114637_03.png" %}"/>
+            <img src="{% static "/images/QQ浏览器截图20190727114637_03.png" %}"/>
             <p class="gzq">
                 <span style="font-weight:900; ">裙子</span>
                 <span>连衣裙</span>
@@ -244,31 +191,12 @@
 						更多
 					</span>
         </div>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/3.png" %}"/>
-        </p>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/3.png" %}"/>
-        </p>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/2.jpg" %}"/>
-        </p>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/2.jpg" %}"/>
-        </p>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/2.jpg" %}"/>
-        </p>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/2.jpg" %}"/>
-        </p>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/2.jpg" %}"/>
-        </p>
-        <p class='meinv'>
-            <img src="{% static "/images/images/images/images/images/images/2.jpg" %}"/>
-        </p>
-
+        {% for shopping in shoppings2 %}
+            <a class='meinv' target="_blank" href="shopp_info/{{ shopping.shopping_name }}">
+                <img src={{ shopping.shopping_photo }}/>
+                <span style="font-size:15px;color:coral;">{{ shopping.shopping_price }}</span>
+            </a>
+        {% endfor %}
     </div>
 </div>
 
@@ -277,51 +205,17 @@
         <p style="font-size:16px;font-weight:900;">
             猜你喜欢
         </p>
-        <p class="xkk">
-            <img src="{% static "/images/images/images/images/images/images/images/QQ浏览器截图20190727131137_03.png" %}"/>
-            <span style="font-size:12px; color:#767676;">
-						略略略
+        {% for guess in guess_shoppings %}
+            <a class="xkk" target="_blank" href="shopp_info/{{ guess.shopping_name }}">
+                <img src={{ guess.shopping_photo }}/>
+                <br>
+                <span style="font-size:15px; color:#333333;">
+						{{ guess.shopping_name }}
 					</span>
-        </p>
-        <p class="xkk">
-            <img src="{% static "/images/images/images/images/images/images/images/QQ浏览器截图20190727131137_03.png" %}"/>
-            <span style="font-size:12px; color:#767676;">
-						略略略
-					</span>
-        </p>
-        <p class="xkk">
-            <img src="{% static "/images/images/images/images/images/images/images/QQ浏览器截图20190727131137_03.png" %}"/>
-            <span style="font-size:12px; color:#767676;">
-						略略略
-					</span>
-        </p>
-        <p class="xkk">
-            <img src="{% static "/images/images/images/images/images/images/images/QQ浏览器截图20190727131137_03.png" %}"/>
-            <span style="font-size:12px; color:#767676;">
-						略略略
-					</span>
-        </p>
-    </div>
-</div>
-<div class="foote">
-    <div class="footer">
-        <span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span><span>略略略</span>
-        <p class="xian"></p>
-        <span>关于TGou</span><span>关于TGou</span><span>关于TGou</span><span>关于TGou</span><span>关于TGou</span><span>关于TGou</span><span>关于TGou</span><span>关于TGou</span><span>关于TGou</span>
-
-        <span style="color:#ccc;">
-					&copy 2003-2016  版权所有
-				</span>
-        <p class="kaokao" style="color:#ccc; font-size:12px;">
-            网络文化金鹰许可证：<span style="color:black;">这碗问[3013]0268-027</span><span>|</span>网络文化金鹰许可证：<span
-                style="color:black;">这碗问[3013]0268-027</span><span>|</span>
-        </p>
-        <p class="meileer" style="color:#ccc; font-size:12px;">
-            互联网违法和不良信息举报电话:0571-81683755 blxx@list.alibaba-inc.com
-        </p>
-
-
+            </a>
+        {% endfor %}
     </div>
 </div>
 </body>
 </html>
+

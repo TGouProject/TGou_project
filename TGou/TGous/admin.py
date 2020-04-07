@@ -7,11 +7,10 @@ admin.site.register(Tgshoppings)  #商品模型
 class AuthorizationUserAdmin(admin.ModelAdmin):
     exclude = ['ordedr_number']  # 屏蔽那些信息
     def save_model(self, request, obj, form, change):
-        orderdata = str(obj.order_data)
         res = time.time()
         res =str(res)
-        ordedr_number = orderdata+res[:10]
-        obj.ordedr_number = ordedr_number.replace('-','')
+        ordedr_number =res[:10]
+        obj.ordedr_number = ordedr_number
         super().save_model(request,obj,form,change)
 
 
