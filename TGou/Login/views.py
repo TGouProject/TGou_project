@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+﻿from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, FileResponse, HttpRequest
 from TGou import settings
 from Login import models
-from Login.forms import UserForm, RegisterForm
+from Login.forms import UserForm, RegisterForm, ModifyForm
 from Login.tool_fun import make_confirm_string, send_email
 import datetime
 from Login.models import User
@@ -172,3 +172,37 @@ class UserInfo(View):
                 return render(request,'TGou_page/save_success.html',{'message':message})
             return HttpResponse('用户信息不存在')
         return HttpResponse('请先登陆在尝试添加')
+
+
+# 修改密码,邮件确认
+def modify_psd(request):
+    if request.method == "POST":
+        modify_psd = ModifyForm(request.POST)
+        message = "请检查填写的内容！"
+        if modify_psd.is_valid():
+            # 通过验证,获取数据
+            email = modify_psd.cleaned_data['email']
+            password1 = modify_psd.cleaned_data['password1']
+            password2 = modify_psd.cleaned_data['password2']
+            if password1 != password2:  # 判断两次密码是否相同
+                message = "两次输入的密码不同！"
+                return render(request, 'Login/modify_psd.html', locals())
+            else:
+                user = models.User.objects.get(email=email)
+                print('改密码', user)
+                if not user:
+                    print('改密码1', user)
+                    message = "邮箱输入有误!"
+                    return render(request, 'Login/modify_psd.html', locals())
+                else:
+                    print('改密码2', user.email)
+                    user.password = password1
+                    user.save()
+                    # 生成code,用于确认邮件请求
+                    code = make_confirm_string(user)
+                    # 发送邮件
+                    send_email(email, code, type='修改密码')
+                    message = '请前往注册邮箱，进行邮件确认！'
+                    return render(request, 'Login/confirm.html', locals())
+    modify_psd = ModifyForm()
+    return render(request, 'Login/modify_psd.html', locals())

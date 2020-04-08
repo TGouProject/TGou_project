@@ -7,5 +7,6 @@ urlpatterns = [
     path('logout', views.logout),
     path('confirm', views.user_confirm),
     path('user_info', views.UserInfo.as_view()),
+    path('modify_psd', views.modify_psd),
 
 ]
