@@ -6,19 +6,18 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 import pymysql
-from TGous.static import email_pwd
 from TGscrapy.items import TgscrapyItem
 
 
 class TgscrapyPipeline(object):
     def process_item(self, item, spider):
         # 连接数据库
-        my_sql = pymysql.connect(host='localhost', port=3306, user=email_pwd.mysql_name, password=email_pwd.mysql_pwd,
-                                 charset='utf8', db='tgou_sql', use_unicode=True)
+        my_sql = pymysql.connect(host='localhost', port=3306, user='root', password='7365728',
+                                 charset='utf8', db='tgou', use_unicode=True)
         # 获取游标
         cur = my_sql.cursor()
         try:
-            # 插入信息到 tugou_sql
+            # 插入信息到 tugou
             if isinstance(item, TgscrapyItem):
                 cur.execute(
                     "insert into tgous_tgshoppings(shopping_name,shopping_price,shopping_info,shopping_type,shopping_sv,shopping_photo) VALUE (%s,%s,%s,%s,%s,%s)",

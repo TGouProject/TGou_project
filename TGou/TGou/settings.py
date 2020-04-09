@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,9 +68,9 @@ WSGI_APPLICATION = 'TGou.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TGou_sql',
+        'NAME': 'tgou',
         'USER': 'root',
-        'PASSWORD': 'jace666',
+        'PASSWORD': '7365728',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     },
@@ -120,12 +120,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static').replace('\\', '/')]
 
 
 #邮箱配置
-from TGous.static import email_pwd
 EMAIL_USE_SSL = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = email_pwd.EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = email_pwd.EMAIL_HOST_PASSWORD
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 CONFIRM_DAYS = 7

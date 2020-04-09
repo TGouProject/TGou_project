@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">我的全部订单</div>
+
+        <!-- Table -->
+        <table class="table">
+            <tr>
+                <th>商品ID</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>交易状态</th>
+                <th>订单日期</th>
+                <th>交易状态</th>
+                <th>收货地址</th>
+            </tr>
+            {% for info in infos %}
+                <tr>
+                    <td>{{ info.id }}</td>
+                    <td>{{ info.order_info }}</td>
+                    <td>{{ info.order_money }}</td>
+                    <td>{{ info.order_type }}</td>
+                    <td>{{ info.order_data }}</td>
+                    <td>{{ info.order_state }}</td>
+                    <td>{{ info.shipping_address }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+{% endblock %}

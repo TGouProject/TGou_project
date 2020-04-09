@@ -41,10 +41,10 @@
     </ul>
 </div>
 <div>
-     <form action="shopp_info/{{ shoppings_obj.shopping_type }}" method="post">
+     <form action="{{ shoppings_obj.id }}" method="POST">
          {% csrf_token %}
-        <input class='button_sty' type="submit" value="立即下单">
-        <input type="text" value="" name="number">
+        <input class='button_sty' type="submit" value="加入购物车">
+{#        <input type="text" value="" name="number">#}
     </form>
 
 </div>

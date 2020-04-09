@@ -7,7 +7,7 @@ class User(models.Model):
         ('female', "女"),
     )
 
-    name = models.CharField(max_length=64, unique=True,primary_key=True)
+    name = models.CharField(max_length=64, unique=True, primary_key=True)
     password = models.CharField(max_length=64)
     email = models.EmailField(unique=True)
     sex = models.CharField(max_length=32, choices=gender, default="男")
@@ -15,8 +15,7 @@ class User(models.Model):
     # 是否进行了邮件确认
     has_confirmed = models.BooleanField(default=False)
     # 收货地址
-    shopping_address = models.CharField(max_length=200, null=True,blank=True)
-
+    shopping_address = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -40,3 +39,23 @@ class ConfirmString(models.Model):
         ordering = ["-c_time"]
         verbose_name = "确认码"
         verbose_name_plural = verbose_name
+
+
+# 用于保存用户的订单
+class AllOrders(models.Model):
+    # 订单信息,商品名称
+    order_info = models.CharField(max_length=200)
+    # 商品数量
+    Quantity_of_Goods = models.CharField(max_length=10)
+    # 订单金额
+    order_money = models.CharField(max_length=100)
+    # 订单分类,已完成,未完成,退货订单....
+    order_type = models.CharField(max_length=15)
+    # 订单日期
+    order_data = models.DateField(auto_now=True)
+    # 交易状态
+    order_state = models.CharField(max_length=10)
+    # 收货地址
+    shipping_address = models.CharField(max_length=150, null=True, blank=True)
+    # 外键
+    user = models.ForeignKey('User', on_delete=models.CASCADE)

@@ -46,22 +46,22 @@
                 </tr>
                 </thead>
                 <tbody id="">
-                {% if todo %}
-                    {% for data in todo %}
+                {% if infos %}
+                    {% for data in infos %}
                         <tr>
                             <td>{#name_1，name_2 #}
                                 <input name="name_{{ data.todo.todo }}" value="{{ data.todo.todo }}" type="checkbox"
                                        style="margin-left: 60px; width: 24px; height: 24px;">
                             </td>
                             {#                                商品名称#}
-                            <td><a href="#">{{ data.todo.todo }}</a></td>
+                            <td ><a href="#">{{ data.order_info }}</a></td>
                             {#                             缩略图   #}
                             <td><a href="#"><img src="{% static "/images/Tgou.png" %}"/></a></td>
                             {#                          单价   #}
-                            <td>￥{{ data.goods.goods_price }}元</td>
+                            <td>￥{{ data.order_money }}元</td>
                             <td><input type="submit" name="-" value="-" class="btn1" formaction=""/>
                                 {#                                    商品数量#}
-                                <input type="text" value="{{ data.goods.goods_num }}" name="count" class="text1"/>
+                                <input type="text" value="{{ data.Quantity_of_Goods }}" name="count" class="text1"/>
                                 <input type="submit" name="+" value="+" class="btn1" formaction=""/></td>
                             {#                                总价格#}
                             <td>￥{{ data.all_price }}</td>
