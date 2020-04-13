@@ -1,7 +1,14 @@
 /venv
 TGou/venv
 **/__pycache__
-**/.idea
+TGou/.idea
 TGou/*.sqlite3
-TGou/*.cfg
+TGou/scrapy.cfg
 TGou/TGous/static/email_pwd.py
+TGou/Login/__pycache__
+TGou/Login/migrations/__pycache__
+TGou/TGou/__pycache__
+TGou/TGous/__pycache__
+TGou/TGous/migrations/__pycache__
+TGou/TGscrapy/__pycache__
+TGou/TGscrapy/spiders/__pycache__
