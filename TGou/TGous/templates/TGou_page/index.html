@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" name="referrer" content="never"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>TGou,随心购</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static '/font/iconfont.css' %}"/>
     <link rel="stylesheet" href="{% static '/css/taobao.css' %}"/>
@@ -19,7 +19,9 @@
         </ul>
         <ul class="hd_right">
             <li><a href="mytgou" target="_blank">我的TGou</a></li>
-            <li><a href="shopping_car" target="_blank">购物车</a></li>
+{#            <li><a href="shopping_car" target="_blank" methods="post">购物车</a></li>#}
+            <li><a href="/api/v1.0/TGou/delete_order/{{ 0 }}" target="_blank">购物车</a></li>
+
             <li>|</li>
             <li><a href="service_centre" target="_blank">服务中心</a></li>
         </ul>
@@ -32,21 +34,12 @@
             <a href="index"><img class="imgss" src="{% static "/images/Tgou.png" %}"/></a>
         </div>
         <div class="sousuo">
-            <form action="">
-                <input type="text">
+            <form action="Search" method="get">
+                <input type="text" name="content">
                 <button type="submit">搜索</button>
             </form>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
-            <span>iphone</span>
+{#            <span>iphone</span>#}
+
         </div>
     </div>
 </div>
@@ -68,13 +61,7 @@
                     优惠折扣
                 </p>
                 <span>超级返利</span>
-                <span>超级返利</span>
-                <span>超级返利</span>
-                <span>超级返利</span>
-                <span>超级返利</span>
-                <span>超级返利</span>
-                <span>超级返利</span>
-                <span>超级返利</span>
+
                 <p class="tmh">
                     特卖会
                 </p>
@@ -124,7 +111,7 @@
 {# 右上 #}
             <div class="uou">
                 {% for photo in shoppings %}
-                    <a class="aa" target="_blank" methods="get" href="shopp_info/{{ photo.shopping_name }}">
+                    <a class="aa" target="_blank" methods="get" href="shopp_info/{{ photo.id }}">
                         <img class=right_head src={{ photo.shopping_photo }}/>
                         <span class="aspan">{{ photo.shopping_price }}</span>
                     </a>
@@ -192,7 +179,7 @@
 					</span>
         </div>
         {% for shopping in shoppings2 %}
-            <a class='meinv' target="_blank" href="shopp_info/{{ shopping.shopping_name }}">
+            <a class='meinv' target="_blank" href="shopp_info/{{ shopping.id }}">
                 <img src={{ shopping.shopping_photo }}/>
                 <span style="font-size:15px;color:coral;">{{ shopping.shopping_price }}</span>
             </a>
@@ -206,7 +193,7 @@
             猜你喜欢
         </p>
         {% for guess in guess_shoppings %}
-            <a class="xkk" target="_blank" href="shopp_info/{{ guess.shopping_name }}">
+            <a class="xkk" target="_blank" href="shopp_info/{{ guess.id }}">
                 <img src={{ guess.shopping_photo }}/>
                 <br>
                 <span style="font-size:15px; color:#333333;">

@@ -4,7 +4,7 @@ from Login.models import User
 
 class TGou_Order(models.Model):
     # 订单号
-    ordedr_number = models.CharField(max_length=200, unique=True, default=None)
+    order_number = models.CharField(max_length=200, unique=True, default=None)
     # 订单信息,商品名称
     order_info = models.CharField(max_length=200)
     # 商品数量
@@ -14,13 +14,16 @@ class TGou_Order(models.Model):
     # 订单分类,已完成,未完成,退货订单....
     order_type = models.CharField(max_length=15)
     # 订单日期
-    order_data = models.DateField(auto_now=True)
+    order_data = models.DateTimeField(auto_now=True)
     # 交易状态
     order_state = models.CharField(max_length=10)
     # 收货地址
-    shipping_address = models.CharField(max_length=150, null=True, blank=True)
+    shopping_address = models.CharField(max_length=150, null=True, blank=True)
+    #商品图片
+    shopping_photo = models.CharField(max_length=500,null=True,blank=True)
     # manytomany
     shopping = models.ManyToManyField('Tgshoppings', name='orders')
+
     # 外键
     user = models.ForeignKey('Login.User', on_delete=models.DO_NOTHING)
 

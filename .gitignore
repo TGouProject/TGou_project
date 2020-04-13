@@ -1,0 +1,7 @@
+/venv
+TGou/venv
+**/__pycache__
+**/.idea
+TGou/*.sqlite3
+TGou/*.cfg
+TGou/TGous/static/email_pwd.py

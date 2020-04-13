@@ -5,8 +5,7 @@ from . import models
 
 admin.site.register(models.User)
 admin.site.register(models.ConfirmString)
+admin.site.register(models.AllOrders)
 
-# sun
-# 123456789
 
 

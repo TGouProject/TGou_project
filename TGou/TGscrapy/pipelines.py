@@ -7,13 +7,13 @@
 
 import pymysql
 from TGscrapy.items import TgscrapyItem
-
+from TGous.static import email_pwd
 
 class TgscrapyPipeline(object):
     def process_item(self, item, spider):
         # 连接数据库
-        my_sql = pymysql.connect(host='localhost', port=3306, user='root', password='7365728',
-                                 charset='utf8', db='tgou', use_unicode=True)
+        my_sql = pymysql.connect(host='localhost', port=3306, user=email_pwd.mysql_name, password=email_pwd.mysql_pwd,
+                                 charset='utf8', db=email_pwd.mysql_db_name, use_unicode=True)
         # 获取游标
         cur = my_sql.cursor()
         try:

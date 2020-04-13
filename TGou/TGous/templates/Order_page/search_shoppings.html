@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" name="referrer" content="never"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>搜索详情</title>
+    </head>
+    <body>
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">通过{{ info }}搜索到的商品..</div>
+        <!-- Table -->
+        <table class="table">
+            <tr>
+                <th>名称</th>
+                <th>图标</th>
+                <th>分类</th>
+                <th>价格</th>
+                <th>描述</th>
+                <th>销量</th>
+            </tr>
+            {% for shopp in shoppings_obj %}
+                <tr>
+                    <th><a href="shopp_info/{{ shopp.id }}">{{ shopp.shopping_name }}</a></th>
+                    <th><img style="width:50px;height: 50px " src={{ shopp.shopping_photo }} alt=""></th>
+                    <th>{{ shopp.shopping_type }}</th>
+                    <th>{{ shopp.shopping_price }}</th>
+                    <th>{{ shopp.shopping_info }}</th>
+                    <th>{{ shopp.shopping_sv }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    </body>
+    </html>
+{% endblock %}

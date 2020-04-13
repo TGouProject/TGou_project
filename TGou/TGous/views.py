@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponse, JsonResponse, FileResponse, HttpRequest
 from TGous import models
 from Login.models import User, AllOrders
-import time
+import time, datetime
+from django.db.models import Q
+import random
 
 
 # from TGous.models import TGou_Order, Tgshoppings
@@ -17,11 +19,12 @@ def index(request):
     user_info = 'user_info'
     info = '完善个人信息'
     username = request.session.get('user_name')
+    shoppings = models.Tgshoppings.objects.all()[1:9]  # 商品对象
+    shoppings2 = models.Tgshoppings.objects.all()[10:18]
+    guess_shoppings = models.Tgshoppings.objects.all()[random.randint(19,30):random.randint(50,60)]
     if username:
         user = User.objects.get(name=username)
-        shoppings = models.Tgshoppings.objects.all()[1:9]  # 商品对象
-        shoppings2 = models.Tgshoppings.objects.all()[10:18]
-        guess_shoppings = models.Tgshoppings.objects.all()[43:63]
+
         longin_state = username  # |登陆的用户
         if user.shopping_address is not None:
 
@@ -31,8 +34,11 @@ def index(request):
                            'shoppings': shoppings, 'shoppings2': shoppings2, 'guess_shoppings': guess_shoppings})
         else:
             return render(request, 'TGou_page/index.html',
-                          {'login_state': longin_state, 'logout': logout, 'login_url': user_info, 'info': info})
-    return render(request, 'TGou_page/index.html', {'login_state': longin_state, 'login_url': login_url})
+                          {'login_state': longin_state, 'logout': logout, 'login_url': user_info, 'info': info,
+                           'shoppings': shoppings, 'shoppings2': shoppings2, 'guess_shoppings': guess_shoppings})
+    return render(request, 'TGou_page/index.html', {'login_state': longin_state, 'login_url': login_url,
+                                                    'shoppings': shoppings, 'shoppings2': shoppings2,
+                                                    'guess_shoppings': guess_shoppings})
 
 
 # 消息界面
@@ -48,9 +54,7 @@ def mytgou(request):
     user = User.objects.get(name=username)
     infos = []
     for i in goods_infos:
-        print(111111111, i)
         if i.user == user:
-            print(12312313)
             infos.append(i)
     print('infos:', infos)
     return render(request, 'TGou_page/mytgou.html', {'infos': infos})
@@ -58,52 +62,119 @@ def mytgou(request):
 
 class ByShopping(View):
     def get(self, request, infos):
-        shoppings_obj = models.Tgshoppings.objects.get(shopping_name=infos)
+        # get 返回商品信息
+        shoppings_obj = models.Tgshoppings.objects.get(id=infos)
         return render(request, 'Order_page/shopping_info.html', {'shoppings_obj': shoppings_obj})
 
     def post(self, request, infos):
-        # res = request.POST.get('number')
+        # post 返回购物车界面
+
+
+
+        res = request.POST.get('number')  # 隐藏属性 默认1
         shoppings_obj = models.Tgshoppings.objects.get(id=infos)
-        print('shoppings_obj', shoppings_obj)
-        ordedr_number = time.time()
         order_info = shoppings_obj.shopping_name
-        Quantity_of_Goods = 1
+        order_photo = shoppings_obj.shopping_photo
+        Quantity_of_Goods = res
         order_money = shoppings_obj.shopping_price
-        order_type = '未交易'
-        order_data = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-        print('order_info', order_data)
         order_state = '未交易'
-
         username = request.session.get('user_name')
-        user_address = models.User.objects.get(name=username)
-        shipping_address = user_address.shopping_address
-
-        user = user_address
-        models.TGou_Order.objects.create(
-            ordedr_number=ordedr_number, order_info=order_info, Quantity_of_Goods=Quantity_of_Goods,
-            order_money=order_money, order_type=order_type, order_data=order_data, order_state=order_state,
-            shipping_address=shipping_address, user=user)
+        user_order = models.User.objects.get(name=username)
+        shopping_address = user_order.shopping_address
+        # 创建订单号
+        res = time.time()
+        res = str(res)
+        ordedr_number = res[:10]
+        user = user_order
+        models.TGou_Order.objects.create(order_number=ordedr_number,
+                                         order_info=order_info, Quantity_of_Goods=Quantity_of_Goods,
+                                         order_money=order_money, order_state=order_state,
+                                         shopping_address=shopping_address, user=user, shopping_photo=order_photo)
         infoss = models.TGou_Order.objects.all()
         infos = []
         for i in infoss:
             if i.user == user:
                 infos.append(i)
-        print('infos', infos)
-        return render(request, 'TGou_page/shopping_car.html', {'infos': infos})
+        # print('infos', infos)
+
+        return render(request, 'TGou_page/shopping_car.html', {'infos': infos, 'username': username})
 
 
 # 服务中心
 def service_centre(request):
     return HttpResponse('服务中心界面')
 
-#
-# # 商品详情
-# def shopping_info(request, infos):
-#     shoppings_obj = models.Tgshoppings.objects.get(shopping_name=infos)
-#     return render(request, 'Order_page/shopping_info.html', {'shoppings_obj': shoppings_obj})
+
+def shopping_car(request):
+    infos = models.TGou_Order.objects.all()
+    return render(request, 'TGou_page/shopping_car.html', {'infos': infos})
 
 
 # 下单
 def buy(request):
     if request.method == 'POST':
-        order_info = request.POST.get('')
+        order_number = request.POST.get('shoppings_name')
+        # print(1111111111111111111111111111,order_number)
+        username = request.session.get('user_name')
+        user = User.objects.get(name=username)
+        if user:
+            order_number = request.POST.get('shoppings_name')
+            tg_rouder = models.TGou_Order.objects.get(order_number=order_number)
+            tg_rouder.order_state = '交易完成'
+            tg_rouder.save()
+
+            AllOrders.objects.create(
+                order_number=tg_rouder.order_number,
+                order_info=tg_rouder.order_info,
+                Quantity_of_Goods=tg_rouder.Quantity_of_Goods,
+                order_money=tg_rouder.order_money,
+                order_data=tg_rouder.order_data,
+                order_state='交易完成',
+                shipping_address=tg_rouder.shopping_address,
+                user=user
+            )
+            goods_infos = AllOrders.objects.all()
+
+            infos = []
+            for i in goods_infos:
+                if i.user == user:
+                    infos.append(i)
+            return render(request, 'TGou_page/mytgou.html', {'infos': infos})
+
+class Search(View):
+    def get(self,request):
+        all_shoppings = models.Tgshoppings.objects.all()
+        info = request.GET.get('content')
+        if info:
+            #模糊查询
+            all_shoppings = all_shoppings.filter(Q(shopping_name__icontains=info) | Q(
+                shopping_info__icontains=info) | Q(shopping_price__icontains=info))
+            if all_shoppings:
+            # print(all_shoppings.count(),1111111111111111111111111111111111111111111)   #获取匹配到的对象的数量
+                shoppings = all_shoppings.all()
+                return render(request,'Order_page/search_shoppings.html',{'shoppings_obj':shoppings,'info':info})
+            else:
+                return HttpResponse('输入的内容有误或商品不存在')
+
+def delete_order(request, infos):
+    if infos != '0':
+        # 先把这条数据删除
+        models.TGou_Order.objects.get(id=infos).delete()
+
+
+
+    # 在查询出登录用户的全部订单,返回前端页面
+    username = request.session.get('user_name')
+    user_object = models.User.objects.get(name=username)
+    infoss = models.TGou_Order.objects.all()
+    for db_state in infoss:
+        print(db_state.order_state, 1111111222222222222)
+        if db_state.order_state == '交易完成':
+            db_state.delete()
+    infos = []
+    for i in infoss:
+        if i.user == user_object:
+            infos.append(i)
+    return render(request, 'TGou_page/shopping_car.html', {'infos': infos})
+
+

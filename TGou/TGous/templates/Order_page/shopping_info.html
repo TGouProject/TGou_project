@@ -1,53 +1,55 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+    <html>
+    <head>
+        <meta charset="utf-8" name="referrer" content="never"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>商品详情</title>
+        <style>
+            a {
+                text-decoration: none;
+            }
 
-<html lang="en">
-<head>
-    <meta charset="utf-8" name="referrer" content="never"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <style>
-        a{
-            text-decoration:none;
-        }
-        li {
-            list-style: none;
-        }
+            li {
+                list-style: none;
+            }
 
-        body {
-            background: #f7f7f7;
-        }
+            body {
+                background: #f7f7f7;
+            }
 
-        img {
-            width: 200px;
-            height: 200px;
-        }
+            img {
+                width: 200px;
+                height: 200px;
+            }
 
-        .button_sty {
-            color: white;
-            background-color: red;
-            border: 1px solid #efefef;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-<div>
-    <ul>
-        <li>品名:{{ shoppings_obj.shopping_name }}</li>
-        <li>单价:{{ shoppings_obj.shopping_price }}</li>
-        <li>销量:{{ shoppings_obj.shopping_sv }}</li>
-        <li>简介:{{ shoppings_obj.shopping_info }}</li>
-        <li><img src={{ shoppings_obj.shopping_photo }}></li>
-    </ul>
-</div>
-<div>
-     <form action="{{ shoppings_obj.id }}" method="POST">
-         {% csrf_token %}
-        <input class='button_sty' type="submit" value="加入购物车">
-{#        <input type="text" value="" name="number">#}
-    </form>
+            .button_sty {
+                color: white;
+                background-color: red;
+                border: 1px solid #efefef;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+    <div>
+        <ul>
+            <li>品名:{{ shoppings_obj.shopping_name }}</li>
+            <li>单价:{{ shoppings_obj.shopping_price }}</li>
+            <li>销量:{{ shoppings_obj.shopping_sv }}</li>
+            <li>简介:{{ shoppings_obj.shopping_info }}</li>
+            <li><img src={{ shoppings_obj.shopping_photo }}></li>
+        </ul>
+    </div>
+    <div>
+        <form action="{{ shoppings_obj.id }}" method="POST">
+            {% csrf_token %}
+            <input class='button_sty' type="submit" value="加入购物车">
+            <input type="hidden" value="1" name="number">
+        </form>
 
-</div>
+    </div>
 
-</body>
-</html>
+    </body>
+    </html>
+{% endblock %}

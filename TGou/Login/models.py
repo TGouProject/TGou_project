@@ -43,14 +43,14 @@ class ConfirmString(models.Model):
 
 # 用于保存用户的订单
 class AllOrders(models.Model):
-    # 订单信息,商品名称
+    # 订单信息
+    order_number = models.CharField(max_length=50,unique=True,default=None)
+    # 商品名称
     order_info = models.CharField(max_length=200)
     # 商品数量
     Quantity_of_Goods = models.CharField(max_length=10)
     # 订单金额
     order_money = models.CharField(max_length=100)
-    # 订单分类,已完成,未完成,退货订单....
-    order_type = models.CharField(max_length=15)
     # 订单日期
     order_data = models.DateField(auto_now=True)
     # 交易状态
@@ -59,3 +59,6 @@ class AllOrders(models.Model):
     shipping_address = models.CharField(max_length=150, null=True, blank=True)
     # 外键
     user = models.ForeignKey('User', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.order_info

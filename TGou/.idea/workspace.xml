@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a30cae1-4a19-4ea8-898e-ecb2483e3532" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="5b8c6028-090a-4831-b817-dce3acffc083" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/TGou$main.coverage" NAME="main Coverage Results" MODIFIED="1586315970820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TGscrapy" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -25,18 +21,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="TGou_sql@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="TGou_sql@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="TGou_sql@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="tgou: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tgou_sql: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -44,232 +40,72 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TGous/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Login/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="46" column="14" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TGous/templates/TGou_page/shopping_car.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>email_pwd</find>
-      <find>if</find>
-      <find>info</find>
-      <find>user_info</find>
-      <find>save</find>
-      <find>shopp_info</find>
-      <find>order_data</find>
-    </findStrings>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/TGou/settings.py" />
-        <option value="$PROJECT_DIR$/Login/urls.py" />
-        <option value="$PROJECT_DIR$/Login/views.py" />
-        <option value="$PROJECT_DIR$/Login/templates/Login/login.html" />
-        <option value="$PROJECT_DIR$/TGscrapy/spiders/huihui.py" />
-        <option value="$PROJECT_DIR$/TGscrapy/pipelines.py" />
-        <option value="$PROJECT_DIR$/TGous/templates/TGou_page/user_info.html" />
-        <option value="$PROJECT_DIR$/TGous/urls.py" />
-        <option value="$PROJECT_DIR$/TGous/templates/TGou_page/mytou.html" />
-        <option value="$PROJECT_DIR$/TGous/templates/TGou_page/index.html" />
-        <option value="$PROJECT_DIR$/TGous/models.py" />
-        <option value="$PROJECT_DIR$/TGous/templates/Order_page/shopping_info.html" />
-        <option value="$PROJECT_DIR$/TGous/templates/TGou_page/mytgou.html" />
-        <option value="$PROJECT_DIR$/Login/models.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/TGous/views.py" />
-        <option value="$PROJECT_DIR$/TGous/templates/TGou_page/shopping_car.html" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="290" />
-    <option name="y" value="59" />
-    <option name="width" value="817" />
-    <option name="height" value="757" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <autoscrollFromSource ProjectPane="true" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-              <item name="models.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-              <item name="views.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-              <item name="views.py" type="8704e2dd:PyFileNode" />
-              <item name="UserInfo" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="Order_page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="TGou_page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="admin.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="apps.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="models.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="models.py" type="8704e2dd:PyFileNode" />
-              <item name="TGou_Order" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="views.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TGou" type="462c0819:PsiDirectoryNode" />
-              <item name="TGous" type="462c0819:PsiDirectoryNode" />
-              <item name="views.py" type="8704e2dd:PyFileNode" />
-              <item name="ByShopping" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="TGou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="edb4453f-0451-4727-89d9-dc7bac2dca0b" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1ZpODddLSHXg4D0DBE2KjvqPxOv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="database.console.LAST_STATE" value="false" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="E:/studyme/portjectgithub/Mxonline3" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\TGou\TGous\static\images" />
+      <recent name="D:\TGou\TGous\templates\Order_page" />
+      <recent name="D:\TGou\TGous\template\TGou_page" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\TGou" />
+      <recent name="D:\TGou\templates" />
+      <recent name="D:\TGou\TGous\static\images\images" />
+      <recent name="D:\TGou\TGous\templates\TGou_page" />
+      <recent name="D:\TGou\TGous\static" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.tests (1)">
+    <configuration name="0001_initial" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TGou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TGous/migrations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TGous/migrations/0001_initial.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TGou" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -283,6 +119,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TGscrapy/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TGou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Login" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Login/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TGou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TGous" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TGous/tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -316,7 +196,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tests (1)" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.tests" />
+        <item itemvalue="Python.0001_initial" />
       </list>
     </recent_temporary>
   </component>
@@ -325,334 +208,98 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0a30cae1-4a19-4ea8-898e-ecb2483e3532" name="Default Changelist" comment="" />
-      <created>1586310162932</created>
+      <changelist id="5b8c6028-090a-4831-b817-dce3acffc083" name="Default Changelist" comment="" />
+      <created>1585532450856</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586310162932</updated>
-      <workItem from="1586310167051" duration="17038000" />
-      <workItem from="1586337989980" duration="3842000" />
-      <workItem from="1586394222429" duration="1855000" />
+      <updated>1585532450856</updated>
+      <workItem from="1585532571585" duration="3462000" />
+      <workItem from="1585549644174" duration="6578000" />
+      <workItem from="1585615789731" duration="8841000" />
+      <workItem from="1585634927044" duration="8828000" />
+      <workItem from="1585704250754" duration="5965000" />
+      <workItem from="1585721528399" duration="5391000" />
+      <workItem from="1585728408116" duration="1378000" />
+      <workItem from="1585790033565" duration="5950000" />
+      <workItem from="1585796043431" duration="3046000" />
+      <workItem from="1585809354739" duration="11848000" />
+      <workItem from="1585875935175" duration="8763000" />
+      <workItem from="1585896065437" duration="4586000" />
+      <workItem from="1585900873447" duration="17031000" />
+      <workItem from="1586223919866" duration="7042000" />
+      <workItem from="1586240427480" duration="22555000" />
+      <workItem from="1586308544375" duration="324000" />
+      <workItem from="1586311034565" duration="124000" />
+      <workItem from="1586315927442" duration="666000" />
+      <workItem from="1586327071304" duration="5499000" />
+      <workItem from="1586393537664" duration="21622000" />
+      <workItem from="1586476303227" duration="3109000" />
+      <workItem from="1586739132867" duration="4204000" />
+      <workItem from="1586760257212" duration="11212000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22735000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23146747" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36173633" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Console" order="7" weight="0.329582" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21543409" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="13" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.16111952" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2246596" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.11414791" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Database Console" order="5" weight="0.329582" />
-      <window_info anchor="bottom" id="Python Console" order="6" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.36173633" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Database" order="0" weight="0.16868381" />
-      <window_info anchor="right" id="SciView" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TGou/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/edb4453f-0451-4727-89d9-dc7bac2dca0b/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://edb4453f-0451-4727-89d9-dc7bac2dca0b/schema/tgou/table/django_admin_log">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGscrapy/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2866" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGscrapy/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2566" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGscrapy/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGscrapy/spiders/huihui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGscrapy/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGscrapy/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="14" column="92" selection-start-line="14" selection-start-column="92" selection-end-line="14" selection-end-column="92" />
-          <folding>
-            <element signature="e#195#209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/templates/Login/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/templates/Login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGou/TGou_versions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/Order_page/orderpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1495" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="50" column="68" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/TGou_page/TGou_page.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/templates/Login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://edb4453f-0451-4727-89d9-dc7bac2dca0b/schema/tgou/table/tgous_tgou_order_orders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/TGou_page/user_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://edb4453f-0451-4727-89d9-dc7bac2dca0b/schema/tgou/table/tgous_tgshoppings">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/TGou_page/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6120">
-          <caret line="204" column="51" selection-start-line="204" selection-start-column="51" selection-end-line="204" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://edb4453f-0451-4727-89d9-dc7bac2dca0b/schema/tgou/table/tgous_tgou_order">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/Order_page/shopping_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/TGou_page/mytgou.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/TGou_page/save_success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://edb4453f-0451-4727-89d9-dc7bac2dca0b/schema/tgou/table/login_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://edb4453f-0451-4727-89d9-dc7bac2dca0b/schema/tgou/table/login_allorders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TGous/templates/TGou_page/shopping_car.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="361" y="78" key="#Notifications" timestamp="1586240455391">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="78" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1586240455391" />
+    <state x="361" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585553383782">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1585553383782" />
+    <state x="498" y="225" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585708667216">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="498" y="225" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1585708667216" />
+    <state x="739" y="237" key="FileChooserDialogImpl" timestamp="1586747620641">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="739" y="237" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1586747620641" />
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom" timestamp="1586418574767">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1586418574767" />
+    <state width="1493" height="263" key="GridCell.Tab.0.center" timestamp="1586418574766">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1586418574766" />
+    <state width="1493" height="263" key="GridCell.Tab.0.left" timestamp="1586418574766">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1586418574766" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right" timestamp="1586418574766">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1586418574766" />
+    <state x="462" y="124" key="SettingsEditor" timestamp="1585551117885">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="462" y="124" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1585551117885" />
+    <state x="349" y="75" key="com.intellij.database.dbimport.ImportDialog" timestamp="1586770096977">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="349" y="75" key="com.intellij.database.dbimport.ImportDialog/0.0.1536.834@0.0.1536.834" timestamp="1586770096977" />
+    <state x="499" y="225" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1586770094387">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="225" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1536.834@0.0.1536.834" timestamp="1586770094387" />
+    <state x="388" y="217" key="com.intellij.ide.util.TipDialog" timestamp="1586760268572">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="388" y="217" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1586760268572" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1586761686450">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1586761686450" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TGou$main.coverage" NAME="main Coverage Results" MODIFIED="1586410428877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TGscrapy" />
+    <SUITE FILE_PATH="coverage/TGou$0001_initial.coverage" NAME="0001_initial Coverage Results" MODIFIED="1585624433372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TGous/migrations" />
+    <SUITE FILE_PATH="coverage/TGou$tests.coverage" NAME="tests Coverage Results" MODIFIED="1585625165821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TGous" />
+    <SUITE FILE_PATH="coverage/TGou$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1586417695869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Login" />
   </component>
 </project>
