@@ -1,0 +1,96 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <meta name="referrer" content="never"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% load static %}
+    <title>Error Page</title>
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet"/>
+    <!-- CUSTOM STYLES -->
+    <link href="{% static '/css/style.css' %}" rel="stylesheet"/>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+
+<div class="header-div" style="  background: url({% static 'images/img/2.jpg' %})">
+    <div class="overlay">
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="{% static '/images/img/logo.png' %}" alt=""/>
+                </div>
+                <div class="col-md-8 ">
+                    <h1>我们发现 <strong>404 !错误 </strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HEADER END -->
+<section class="section-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>此错误的可能原因r</h3>
+                <ul>
+                    <li>您要查找的资源不在这里或已移动。.
+                    </li>
+                    <li>某人或管理员出于某种原因删除了该页面.
+                    </li>
+                    <li>还有一些其他的原因不能在这里透露，所以你应该联系管理员在
+                        <strong>help@admindomain.com</strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="alert alert-info">
+                    如果有紧急情况,你可以拨打
+                    <strong>+1383838438</strong>联系我们
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <h2>快速导航</h2>
+                <hr/>
+                <a href="index" class="btn btn-info">返回主页</a>
+                <hr/>
+                <a href="mailto:help@admindomain.com?Subject=Hello%20Subject" class="btn  btn-warning">发送邮件</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- TEXT SECTION END -->
+<div class="header-div">
+    <div class="overlay">
+
+        <div class="container">
+            <div class="row text-center">
+
+                <div class="col-md-12">
+                    <h1>抱歉, <strong>给您带来了不便!! </strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HEADER DIV REPLICATE END -->
+<footer>
+    © 2015 YourDomain.com <a href="http://www.xmoban.cn/" target="_blank">by Xmoban</a>
+</footer>
+<!-- FOOTER SECTION END -->
+<!-- REQUIRED SCRIPTS FILES -->
+<!-- CORE JQUERY FILE -->
+<script src="{% static 'js/jquery-1.11.1.js' %}"></script>
+<!-- REQUIRED BOOTSTRAP SCRIPTS -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>

@@ -8,22 +8,22 @@
     <link rel="stylesheet" type="text/css" href="{% static '/font/iconfont.css' %}"/>
     <link rel="stylesheet" href="{% static '/css/taobao.css' %}"/>
 </head>
-<body>
+<body style="background-color: #d6e9c6">
 <nav class="hdd">
     <div class="hdx">
         <ul class="hd_left">
             <li><a href={{ login_url }}>{{ login_state }}</a></li>
             <li><a href="logout">{{ logout }}</a></li>
-            <li><a href="message" target="_blank">消息</a></li>
+{#            <li><a href="message" target="_blank">消息</a></li>#}
             <li><a href="user_info">{{ info }}</a></li>
         </ul>
         <ul class="hd_right">
             <li><a href="mytgou" target="_blank">我的TGou</a></li>
 {#            <li><a href="shopping_car" target="_blank" methods="post">购物车</a></li>#}
-            <li><a href="/api/v1.0/TGou/delete_order/{{ 0 }}" target="_blank">购物车</a></li>
+            <li><a href="shopping_car" target="_blank">购物车</a></li>
 
-            <li>|</li>
-            <li><a href="service_centre" target="_blank">服务中心</a></li>
+{#            <li>|</li>#}
+{#            <li><a href="service_centre" target="_blank">服务中心</a></li>#}
         </ul>
     </div>
 </nav>
@@ -174,9 +174,9 @@
 					<span>
 						风向标，买手呕血推荐
 					</span>
-            <span>
-						更多
-					</span>
+{#            <span>#}
+{#						更多#}
+{#					</span>#}
         </div>
         {% for shopping in shoppings2 %}
             <a class='meinv' target="_blank" href="shopp_info/{{ shopping.id }}">

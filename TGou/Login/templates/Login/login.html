@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% load static %}
+    <body style="background: url({%static 'images/324442.jpg'%});background-size: cover ;opacity: 1.0">
+
     <div style="margin: 15% 40%;">
-        <h1>欢迎登录！</h1>
+        <h1 style="color:orangered;">欢迎登录！</h1>
         <form action="/api/v1.0/TGou/login" method="post">
             {% csrf_token %}
             {% if message %}
@@ -10,11 +13,11 @@
             {% endif %}
             {#  通过{{ login_form.****.label_tag }}获取每一个字段，然后分别渲染 #}
             {#  login_form 视图函数传过来的表单对象  #}
-            <div class="form-group">
+            <div class="form-group" style="color: orangered">
                 {{ login_form.username.label_tag }}
                 {{ login_form.username }}
             </div>
-            <div class="form-group">
+            <div class="form-group" style="color:orangered;">
                 {{ login_form.password.label_tag }}
                 {{ login_form.password }}
                 <a href="modify_psd"><font color="#FF0000">忘记密码?</font> </a>
@@ -28,5 +31,8 @@
             <button type="submit" class="btn btn-primary pull-right">提交</button>
         </form>
     </div>
+
+    </body>
+
 
 {% endblock %}
