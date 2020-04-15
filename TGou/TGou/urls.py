@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from captcha.views import captcha_refresh #记得导入
+from TGous.views import index
+
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('TGou.TGou_versions')),
-    path('captcha', include('captcha.urls')),
+    path('',index),
+    path('captcha/',include('captcha.urls')),
+    path('refresh/',captcha_refresh),
+
 ]

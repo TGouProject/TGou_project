@@ -2,7 +2,10 @@
 
 {% block content %}
     {% load static %}
-    <body style="background: url({%static 'images/324442.jpg'%});background-size: cover ;opacity: 1.0">
+    <head>
+        <title>登陆</title>
+    </head>
+    <body style="background: url({% static 'images/324442.jpg' %});background-size: cover ;opacity: 1.0">
 
     <div style="margin: 15% 40%;">
         <h1 style="color:orangered;">欢迎登录！</h1>
@@ -20,10 +23,12 @@
             <div class="form-group" style="color:orangered;">
                 {{ login_form.password.label_tag }}
                 {{ login_form.password }}
-                <a href="modify_psd"><font color="#FF0000">忘记密码?</font> </a>
+                <a href="modify_psd" style="color:#FF0000 ">忘记密码? </a>
             </div>
             <div class="form-group">
-                {{ login_form.captcha.errors }}
+                <span style="color: red">
+                    {{ login_form.captcha.errors }}
+                </span>
                 {{ login_form.captcha.label_tag }}
                 {{ login_form.captcha }}
             </div>
@@ -31,7 +36,16 @@
             <button type="submit" class="btn btn-primary pull-right">提交</button>
         </form>
     </div>
-
+    <script>
+        $(function () {
+            $(".captcha").click(function () {
+                $.getJSON("/captcha/refresh/?", function (result) {
+                    $('.captcha').attr('src', result.image_url);
+                    $('#id_captcha_0').val(result.key);
+                });
+            });
+        });
+    </script>
     </body>
 
 

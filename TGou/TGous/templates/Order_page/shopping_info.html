@@ -30,21 +30,24 @@
                 border: 1px solid #efefef;
                 border-radius: 5px;
             }
-            body{
-                background-color:#d6e9c6;
+
+            body {
+                background:url({% static 'images/2001513.jpg' %});
                 height: 100%;
                 width: 100%;
+                opacity:0.8;
             }
         </style>
     </head>
     <body>
     <div>
-        <ul>
-            <li>品名:{{ shoppings_obj.shopping_name }}</li>
-            <li>单价:{{ shoppings_obj.shopping_price }}</li>
-            <li>销量:{{ shoppings_obj.shopping_sv }}</li>
-            <li>简介:{{ shoppings_obj.shopping_info }}</li>
-            <li><img src={{ shoppings_obj.shopping_photo }}></li>
+        <ul class="list-group">
+
+            <li class="list-group-item"><strong>品名:</strong>{{ shoppings_obj.shopping_name }}</li>
+            <li class="list-group-item"><strong>单价:</strong>{{ shoppings_obj.shopping_price }}</li>
+            <li class="list-group-item"><strong>销量:</strong>{{ shoppings_obj.shopping_sv }}</li>
+            <li class="list-group-item"><strong>简介:</strong>{{ shoppings_obj.shopping_info }}</li>
+            <li class="list-group-item"><img src={{ shoppings_obj.shopping_photo }}></li>
         </ul>
     </div>
     <div>

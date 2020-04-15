@@ -144,37 +144,33 @@ def shopping_car(request):
 # 下单
 def buy(request):
     try:
-        if request.method == 'POST':
-            username = request.session.get('user_name')
-            user = User.objects.get(name=username)
-            if user:
+        if request.session.get('is_login', None):
+            if request.method == 'POST':
+                username = request.session.get('user_name')
+                user = User.objects.get(name=username)
                 order_number = request.POST.get('shoppings_name')
-                print(1111111111111111111111111111, order_number)
-                if order_number:
-                    tg_rouder = models.TGou_Order.objects.get(order_number=order_number)
-                    tg_rouder.order_state = '交易完成'
-                    tg_rouder.save()
+                tg_rouder = models.TGou_Order.objects.get(order_number=order_number)
+                AllOrders.objects.create(
+                    order_number=tg_rouder.order_number,
+                    order_info=tg_rouder.order_info,
+                    Quantity_of_Goods=tg_rouder.Quantity_of_Goods,
+                    order_money=tg_rouder.order_money,
+                    order_data=tg_rouder.order_data,
+                    order_state='交易完成',
+                    shipping_address=tg_rouder.shopping_address,
+                    user=user
+                )
+                tg_rouder.delete()
+                goods_infos = AllOrders.objects.all()
 
-                    AllOrders.objects.create(
-                        order_number=tg_rouder.order_number,
-                        order_info=tg_rouder.order_info,
-                        Quantity_of_Goods=tg_rouder.Quantity_of_Goods,
-                        order_money=tg_rouder.order_money,
-                        order_data=tg_rouder.order_data,
-                        order_state='交易完成',
-                        shipping_address=tg_rouder.shopping_address,
-                        user=user
-                    )
-                    goods_infos = AllOrders.objects.all()
-
-                    infos = []
-                    for i in goods_infos:
-                        if i.user == user:
-                            infos.append(i)
-                    return render(request, 'TGou_page/mytgou.html', {'infos': infos})
-                else:
-                    messages.error(request, '请至少购选一种商品!')
-                    return redirect('/api/v1.0/TGou/shopping_car')
+                infos = []
+                for i in goods_infos:
+                    if i.user == user:
+                        infos.append(i)
+                return render(request, 'TGou_page/mytgou.html', {'infos': infos})
+            else:
+                messages.error(request, '请至少购选一种商品!')
+                return redirect('/api/v1.0/TGou/shopping_car')
     except:
         return redirect('/api/v1.0/TGou/404')
 
@@ -200,18 +196,12 @@ def delete_order(request, infos):
     if infos != '0':
         # 先把这条数据删除
         models.TGou_Order.objects.get(id=infos).delete()
-
+        return redirect('/api/v1.0/TGou/shopping_car')
     # 在查询出登录用户的全部订单,返回前端页面
     username = request.session.get('user_name')
     user_object = models.User.objects.get(name=username)
-
-    infoss = models.TGou_Order.objects.all()
-    for db_state in infoss:
-        print(db_state.order_state, 1111111222222222222)
-        if db_state.order_state == '交易完成':
-            db_state.delete()
     infos = []
-    for i in infoss:
+    for i in infos:
         if i.user == user_object:
             infos.append(i)
     return render(request, 'TGou_page/shopping_car.html', {'infos': infos})

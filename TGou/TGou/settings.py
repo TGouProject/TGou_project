@@ -33,8 +33,17 @@ INSTALLED_APPS = [
     'Login.apps.LoginConfig',
     'captcha',
 
-
 ]
+
+
+#验证码配置
+CAPTCHA_LENGTH = 4 #字符个数
+CAPTCHA_TIMEOUT = 1 #超时时间
+CAPTCHA_IMAGE_SIZE=(100,30) #图像大小
+CAPTCHA_BACKGROUND_COLOR ='#f3f3f3'
+
+
+
 
 
 MIDDLEWARE = [

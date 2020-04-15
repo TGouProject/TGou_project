@@ -20,14 +20,18 @@
                 margin-top: 100px;
                 float: left;
                 padding-left: 20px;
+
             }
+            .font_color{
+                color: white;
+            }
+
         </style>
 
     </head>
-    <body style="background-color: #d6e9c6">
+    <body  style="background: url({% static 'images/2001513.jpg' %}); background-size: cover ; opacity: 0.8">
     <form action="/api/v1.0/TGou/buy" method="POST">
         {% csrf_token %}
-
         <div class="head">
             <table width="100%" cellpadding="0" cellspacing="0" border='0px'>
                 <thead>
@@ -37,12 +41,12 @@
 {#                               style="margin-top: 50px; margin-left: 10px;width: 15px; height: 15px;">#}
 {#                        <span>全选</span>#}
                     </th>
-                    <th width="20%">订单号</th>
-                    <th width='20%'>商品名称</th>
-                    <th width='20%'>商品图片</th>
-                    <th width='20%'>商品单价</th>
-                    <th width='20%'>商品数量</th>
-                    <th width='20%'>操作</th>
+                    <th class="font_color" width="20%">订单号</th>
+                    <th class="font_color" width='20%'>商品名称</th>
+                    <th class="font_color" width='20%'>商品图片</th>
+                    <th class="font_color" width='20%'>商品单价</th>
+                    <th class="font_color" width='20%'>商品数量</th>
+                    <th class="font_color" width='20%'>操作</th>
                 </tr>
                 {#                </thead>#}
                 {#                <tbody id="">#}
@@ -53,28 +57,28 @@
                                 <input name="shoppings_name" value="{{ data.order_number }}" type="checkbox"
                                        style="margin-left: 60px; width: 15px; height: 15px;">
                             </td>
-                            <td>
+                            <td class="font_color">
                                 <span name="order_number">{{ data.order_number }}</span>
                             </td>
                             {#商品名称#}
-                            <td>{{ data.order_info }}</td>
+                            <td class="font_color">{{ data.order_info }}</td>
                             {#缩略图 #}
-                            <td><img style="width: 100px ; height: 100px" src={{ data.shopping_photo }}/></td>
+                            <td><img style="width: 100px ; height: 100px;border: 1px solid transparent" src={{ data.shopping_photo }}/></td>
                             {#单价#}
-                            <td>￥{{ data.order_money }}元</td>
+                            <td class="font_color">￥{{ data.order_money }}元</td>
                             {#商品数量#}
-                            <td>
+                            <td class="font_color">
                                 {#                                      <input type="submit" name="-" value="-" class="btn1" formaction=""/>#}
                                 <span name="count">{{ data.Quantity_of_Goods }}</span>
                                 {#                                      <input type="submit" name="+" value="+" class="btn1" formaction=""/>#}
                             </td>
 
-                            <td><a href="/api/v1.0/TGou/delete_order/{{ data.id }}">删除</a></td>
+                            <td><a class="font_color" href="/api/v1.0/TGou/delete_order/{{ data.id }}">删除</a></td>
                         </tr>
                     {% endfor %}
                 {% else %}
                     <tr>
-                        <td colspan="6" style="text-align: center;">购物车空空如也~~，请快去购物吧！</td>
+                        <td colspan="6" style="text-align: center;color: orangered">购物车空空如也~~，请快去购物吧！</td>
                     </tr>
                 {% endif %}
                 </thead>
@@ -82,14 +86,14 @@
 
         </div>
         <div class="shouhuo">
-            <div class="shouhuo_top">收货信息</div>
-            <label>收货地址:</label>
-            <select name="address">
+            <div class="font_color">收货信息</div>
+            <label class="font_color">收货地址:</label>
+            <select name="address" class="font_color">
                 {% for add in infos %}
                     <option class="input">{{ add.shopping_address }}</option>
                 {% endfor %}
             </select>
-            <label>支付方式:</label>
+            <label class="font_color">支付方式:</label>
             <select name="payment">
                 <option value="zfb">支付宝</option>
                 <option value="wx">微信</option>

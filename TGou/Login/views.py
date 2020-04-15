@@ -7,9 +7,8 @@ from Login.tool_fun import make_confirm_string, send_email
 import datetime
 from Login.models import User
 from django.views import View
-
-
-
+from captcha.models import CaptchaStore
+from captcha.helpers import captcha_image_url
 
 
 # 登录视图
@@ -17,11 +16,12 @@ def login(request):
     # 通过session判断用户是否登录
     if request.session.get('is_login'):
         return redirect('/api/v1.0/TGou/index')
+
     # POST请求
     if request.method == "POST":
         # 接收表单数据生成表单对象
         login_form = UserForm(request.POST)
-        message = '检查填写内容'
+        # message = '检查填写内容'
         # 使用表单类自带的is_valid()方法一步完成数据验证工作,例如:验证码
         if login_form.is_valid():
             # 验证成功,从表单对象中获取具体的值
@@ -83,13 +83,7 @@ def register(request):
                     return render(request, 'Login/register.html', locals())
 
                 # 当一切都OK的情况下，创建新用户
-                new_user = models.User.objects.create()
-                new_user.name = username
-                new_user.password = password1
-                new_user.email = email
-                new_user.sex = sex
-                new_user.save()
-
+                new_user = models.User.objects.create(name=username, password=password1, email=email, sex=sex)
                 # 生成code,用于确认邮件请求
                 code = make_confirm_string(new_user)
                 # 发送邮件
@@ -169,7 +163,7 @@ class UserInfo(View):
                 user.shopping_address = address
                 user.save()
                 message = '新的地址保存成功'
-                return render(request,'TGou_page/save_success.html',{'message':message})
+                return render(request, 'TGou_page/save_success.html', {'message': message})
             return HttpResponse('用户信息不存在')
         return HttpResponse('请先登陆在尝试添加')
 
