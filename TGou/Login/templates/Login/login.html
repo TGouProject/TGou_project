@@ -4,11 +4,23 @@
     {% load static %}
     <head>
         <title>登陆</title>
-    </head>
-    <body style="background: url({% static 'images/324442.jpg' %});background-size: cover ;opacity: 1.0">
+        <style>
+            .longdiv{
+                background: url({% static 'images/background.png' %});
+                background-size: 100% ;
+                opacity: 75%;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 53px;
+            }
 
-    <div style="margin: 15% 40%;">
-        <h1 style="color:orangered;">欢迎登录！</h1>
+        </style>
+    </head>
+    <body>
+<div class="longdiv">
+       <div style=" margin: 15% 40%;">
+        <h1 style="color: black">欢迎登录！</h1>
         <form action="/api/v1.0/TGou/login" method="post">
             {% csrf_token %}
             {% if message %}
@@ -16,16 +28,16 @@
             {% endif %}
             {#  通过{{ login_form.****.label_tag }}获取每一个字段，然后分别渲染 #}
             {#  login_form 视图函数传过来的表单对象  #}
-            <div class="form-group" style="color: orangered">
+            <div class="form-group" style="color: black">
                 {{ login_form.username.label_tag }}
                 {{ login_form.username }}
             </div>
-            <div class="form-group" style="color:orangered;">
+            <div class="form-group" style="color: black">
                 {{ login_form.password.label_tag }}
                 {{ login_form.password }}
-                <a href="modify_psd" style="color:#FF0000 ">忘记密码? </a>
+                <a href="modify_psd" style="color:yellowgreen ">忘记密码? </a>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="color: black">
                 <span style="color: red">
                     {{ login_form.captcha.errors }}
                 </span>
@@ -36,6 +48,8 @@
             <button type="submit" class="btn btn-primary pull-right">提交</button>
         </form>
     </div>
+
+</div>
     <script>
         $(function () {
             $(".captcha").click(function () {
