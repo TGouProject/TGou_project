@@ -118,9 +118,9 @@ class ByShopping(View):
                     if i.user == user:
                         infos.append(i)
                 # print('infos', infos)
+                usernames = user_longin_state(request)
 
-                return render(request, 'TGou_page/shopping_car.html',
-                              {'infos': infos, 'username': user_longin_state(request)})
+                return render(request, 'TGou_page/shopping_car.html',locals())
             return redirect('/api/v1.0/TGou/login')
         except:
             return redirect('/api/v1.0/TGou/404')
@@ -148,20 +148,21 @@ def buy(request):
             if request.method == 'POST':
                 username = request.session.get('user_name')
                 user = User.objects.get(name=username)
-                order_number = request.POST.get('shoppings_name')
+                order_number = request.POST.getlist('shoppings_name')
                 if order_number:
-                    tg_rouder = models.TGou_Order.objects.get(order_number=order_number)
-                    AllOrders.objects.create(
-                        order_number=tg_rouder.order_number,
-                        order_info=tg_rouder.order_info,
-                        Quantity_of_Goods=tg_rouder.Quantity_of_Goods,
-                        order_money=tg_rouder.order_money,
-                        order_data=tg_rouder.order_data,
-                        order_state='交易完成',
-                        shipping_address=tg_rouder.shopping_address,
-                        user=user
-                    )
-                    tg_rouder.delete()
+                    for order in order_number:
+                        tg_rouder = models.TGou_Order.objects.get(order_number=order)
+                        AllOrders.objects.create(
+                            order_number=tg_rouder.order_number,
+                            order_info=tg_rouder.order_info,
+                            Quantity_of_Goods=tg_rouder.Quantity_of_Goods,
+                            order_money=tg_rouder.order_money,
+                            order_data=tg_rouder.order_data,
+                            order_state='交易完成',
+                            shipping_address=tg_rouder.shopping_address,
+                            user=user
+                        )
+                        tg_rouder.delete()
                     goods_infos = AllOrders.objects.all()
                     infos = []
                     for i in goods_infos:
