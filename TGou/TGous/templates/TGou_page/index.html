@@ -15,14 +15,14 @@
     <div class="hdx">
         <ul class="hd_left">
             <li><a href={{ login_url }}>{{ login_state }}</a></li>
-            <li><a href="logout">{{ logout }}</a></li>
+            <li><a href="/api/v1.0/TGou/logout">{{ logout }}</a></li>
             {#            <li><a href="message" target="_blank">消息</a></li>#}
             <li><a href="user_info">{{ info }}</a></li>
         </ul>
         <ul class="hd_right">
-            <li><a href="mytgou" target="_blank">我的TGou</a></li>
+            <li><a href="/api/v1.0/TGou/mytgou" target="_blank">我的TGou</a></li>
             {#            <li><a href="shopping_car" target="_blank" methods="post">购物车</a></li>#}
-            <li><a href="shopping_car" target="_blank">购物车</a></li>
+            <li><a href="/api/v1.0/TGou/shopping_car" target="_blank">购物车</a></li>
 
             {#            <li>|</li>#}
             {#            <li><a href="service_centre" target="_blank">服务中心</a></li>#}
@@ -33,10 +33,10 @@
 <div class="inp">
     <div class="imput">
         <div class="aitao">
-            <a href="index"><img class="imgss" src="{% static "/images/Tgou.png" %}"/></a>
+            <a href="/api/v1.0/TGou/index"><img class="imgss" src="{% static "/images/Tgou.png" %}"/></a>
         </div>
         <div class="sousuo">
-            <form action="Search" method="get">
+            <form action="/api/v1.0/TGou/Search" method="get">
                 <input type="text" name="content">
                 <button type="submit">搜索</button>
             </form>
@@ -63,7 +63,13 @@
                     优惠折扣
                 </p>
                 <span>超级返利</span>
-
+                <span>超级返利</span>
+                <span>超级返利</span>
+                <span>超级返利</span>
+                <span>超级返利</span>
+                <span>超级返利</span>
+                <span>超级返利</span>
+                <span>超级返利</span>
                 <p class="tmh">
                     特卖会
                 </p>
@@ -132,7 +138,7 @@
             <div id="box" onmouseover="stop()" onmouseout="start()">
                 <div class="slide"><img src="{% static "/images/QQ浏览器截图20190727114637_03.png" %}"/></div>
                 <div class="slide"><img src="{% static "/images/2001513.jpg" %}"/></div>
-                <div class="slide"><img src="{% static "/images/QQ浏览器截图20190727114637_03.png" %}"/></div>
+                <div class="slide"><img src="{% static "/images/324442.jpg" %}"/></div>
             </div>
             <p class="gzq">
                 <span style="font-weight:900; ">裙子</span>

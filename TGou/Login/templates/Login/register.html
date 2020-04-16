@@ -2,6 +2,8 @@
 
 {% block title %}注册{% endblock %}
 {% block content %}
+    {% load static %}
+    <body style="background: url({% static 'images/324442.jpg' %});background-size: cover ;opacity: 1.0">
     <div class="container">
         <div class="col-md-4 col-md-offset-4">
             <form class='form-register' action="/api/v1.0/TGou/register" method="post">
@@ -11,20 +13,20 @@
                 {% endif %}
 
                 {% csrf_token %}
-                <h2 class="text-center">欢迎注册</h2>
-                <div class="form-group">
+                <h2 class="text-center" style="color:orangered;">欢迎注册</h2>
+                <div class="form-group" style="color:orangered;">
                     {{ register_form.username.label_tag }}
                     {{ register_form.username }}
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="color:orangered;">
                     {{ register_form.password1.label_tag }}
                     {{ register_form.password1 }}
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="color:orangered;">
                     {{ register_form.password2.label_tag }}
                     {{ register_form.password2 }}
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="color:orangered;">
                     {{ register_form.email.label_tag }}
                     {{ register_form.email }}
                 </div>
@@ -44,4 +46,7 @@
             </form>
         </div>
     </div> <!-- /container -->
+
+    </body>
+
 {% endblock %}

@@ -20,9 +20,9 @@ function LeftMove() {
 }
 
 function divInterval() {
-    moveId = setInterval(LeftMove, 1000);//设置一个10毫秒定时器
+    moveId = setInterval(LeftMove, 10);//毫秒定时器
 }
-timeId = setInterval(divInterval, 80);//设置一个3秒的定时器。
+timeId = setInterval(divInterval, 2000);//秒定时器。
 
 function stop() {
     clearInterval(timeId);

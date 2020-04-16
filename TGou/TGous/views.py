@@ -16,8 +16,8 @@ import random
 def index(request):
     longin_state = '登陆'
     logout = '退出'
-    login_url = 'login'
-    user_info = 'user_info'
+    login_url = '/api/v1.0/TGou/login'
+    user_info = '/api/v1.0/TGou/user_info'
     info = '完善个人信息'
     username = request.session.get('user_name')
     shoppings = models.Tgshoppings.objects.all()[1:9]  # 商品对象
@@ -144,33 +144,35 @@ def shopping_car(request):
 # 下单
 def buy(request):
     try:
-        if request.session.get('is_login', None):
+        if request.session.get('is_login'):
             if request.method == 'POST':
                 username = request.session.get('user_name')
                 user = User.objects.get(name=username)
                 order_number = request.POST.get('shoppings_name')
-                tg_rouder = models.TGou_Order.objects.get(order_number=order_number)
-                AllOrders.objects.create(
-                    order_number=tg_rouder.order_number,
-                    order_info=tg_rouder.order_info,
-                    Quantity_of_Goods=tg_rouder.Quantity_of_Goods,
-                    order_money=tg_rouder.order_money,
-                    order_data=tg_rouder.order_data,
-                    order_state='交易完成',
-                    shipping_address=tg_rouder.shopping_address,
-                    user=user
-                )
-                tg_rouder.delete()
-                goods_infos = AllOrders.objects.all()
-
-                infos = []
-                for i in goods_infos:
-                    if i.user == user:
-                        infos.append(i)
-                return render(request, 'TGou_page/mytgou.html', {'infos': infos})
-            else:
-                messages.error(request, '请至少购选一种商品!')
-                return redirect('/api/v1.0/TGou/shopping_car')
+                if order_number:
+                    tg_rouder = models.TGou_Order.objects.get(order_number=order_number)
+                    AllOrders.objects.create(
+                        order_number=tg_rouder.order_number,
+                        order_info=tg_rouder.order_info,
+                        Quantity_of_Goods=tg_rouder.Quantity_of_Goods,
+                        order_money=tg_rouder.order_money,
+                        order_data=tg_rouder.order_data,
+                        order_state='交易完成',
+                        shipping_address=tg_rouder.shopping_address,
+                        user=user
+                    )
+                    tg_rouder.delete()
+                    goods_infos = AllOrders.objects.all()
+                    infos = []
+                    for i in goods_infos:
+                        if i.user == user:
+                            infos.append(i)
+                    return render(request, 'TGou_page/mytgou.html', {'infos': infos})
+                else:
+                    messages.error(request, '请至少购选一种商品!')
+                    return redirect('/api/v1.0/TGou/shopping_car')
+        else:
+            return redirect('/api/v1.0/TGou/login')
     except:
         return redirect('/api/v1.0/TGou/404')
 

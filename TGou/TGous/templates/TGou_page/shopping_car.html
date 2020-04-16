@@ -69,7 +69,7 @@
                             {#商品数量#}
                             <td class="font_color">
                                 {#                                      <input type="submit" name="-" value="-" class="btn1" formaction=""/>#}
-                                <span name="count">{{ data.Quantity_of_Goods }}</span>
+                                <span name="count">{{ data.Quantity_of_Goods }}/件</span>
                                 {#                                      <input type="submit" name="+" value="+" class="btn1" formaction=""/>#}
                             </td>
 
@@ -88,7 +88,7 @@
         <div class="shouhuo">
             <div class="font_color">收货信息</div>
             <label class="font_color">收货地址:</label>
-            <select name="address" class="font_color">
+            <select name="address">
                 {% for add in infos %}
                     <option class="input">{{ add.shopping_address }}</option>
                 {% endfor %}

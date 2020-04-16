@@ -6,15 +6,29 @@
 
 **使用说明:**
 
-- 同步环境:
-  - `pip install -r requirement.txt`
-- 项目层更改`settings.py`中的数据库配置.
-- 数据库迁移: `python manage.py makemigrations`
-  - `python manage.py migrate`
-- 创建超级用户:
-  - `python manage.py createsuperuser`
-- 运行项目:
-  - `python manage.py runserver`
+目录结构
+
+- ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/ZUXCJANDCZJwMw9eDcmXBTEyGkjQTxc.Bgd0oxcg9qQeEW1rWoANQfS3OU88yJOdJUekQnFke0.oZYVgsKDbxA!!/b&bo=RgF2AQAAAAADBxI!&rf=viewer_4)
+
+1. 同步环境:
+
+  `pip install -r requirement.txt`
+
+2. 项目层更改`settings.py`中的数据库配置.
+
+3. 数据库迁移: `python manage.py makemigrations`
+
+  `python manage.py migrate`
+
+4. 创建超级用户:
+
+  `python manage.py createsuperuser`
+
+5. 运行项目:
+
+  `python manage.py runserver`
+
+  
 
 
 
@@ -29,14 +43,27 @@
 
 
 
-### 项目展示 :
+### 界面展示 :
 
 - 首页
-  - 
-- 登录
-  - 
+
+  ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/wSJ2S*tZT7v.5zxXfWcfXSsX95.9TXX3C*wJHZ.4Xn0ABLnqXsl8MHiwen8Hr14DMRGuNspKPIV6bbIMPTfmrh53I3zXNfXVGDG.fakk*NY!/b&bo=AweOAwAAAAADR.s!&rf=viewer_4)
+
+  ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/wSJ2S*tZT7v.5zxXfWcfXQeLsooWxldc9iQge35h.8f6tvlY7e.*YcQtD68IoTOIUC9AH6jdSa29HDO9wk1MfgD7E*K6ElLbqrrIVx*xRPg!/b&bo=9AanAwAAAAADRzQ!&rf=viewer_4)
+
+  
+
+- 登录/注册
+  
+  - ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/wSJ2S*tZT7v.5zxXfWcfXbLNr*IdY0coxdhmaoChbD4hFGYadKenWJ*J5ViJzDlfV2kpfzEh3z4FD5xuFSNYvrYySF.xmnwMhETVTq2Bl44!/b&bo=fge*AwAAAAADR6c!&rf=viewer_4)
+  - ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/wSJ2S*tZT7v.5zxXfWcfXZkdn4tEOaAMTsqmn2zDIGD6KxIVqWQRcdBDzuorwt8*kCxFiusnMU8RIJNzDOiW9EsgTfSpmjhoYgzd7Tt5ovg!/b&bo=eweHAwAAAAADR5o!&rf=viewer_4)
+  - ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/wSJ2S*tZT7v.5zxXfWcfXYqFRd4eDehhX7WQfeBKsHXMVgMl5NsUoBnqGexmThTYm*zhp3Nn3xkNMjl6oyNRD7sKtr0E.M7DogIunWBqCXI!/b&bo=JgcKAwAAAAADFxo!&rf=viewer_4)
+  
 - 商品详情
-  - 
+  
+  - ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/wSJ2S*tZT7v.5zxXfWcfXZCWYY0GacaTZPRn1DNJ*BFEbWGbI6pdkRdEHd9Gvn36zpYeb0wmH.cprRPTB5xbu2T3Kp6KxAtya*Wjfi6vPdE!/b&bo=gAfvAgAAAAADRwg!&rf=viewer_4)
+  
 - 购物车
-  - 
+  
+  - ![](http://m.qpic.cn/psc?/V13p1bPR03JQ85/wSJ2S*tZT7v.5zxXfWcfXYYWh1zLZalL0AWMbAsClt1.A5Dk7dJhC4J9MqP45f9EQ6qV5x*bZjSwwOgEpINrrhFfbhsg.rBLzbkNsYbKHQI!/b&bo=fgfrAgAAAAADZ9I!&rf=viewer_4)
 

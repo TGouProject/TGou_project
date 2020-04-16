@@ -7,8 +7,9 @@ from Login.tool_fun import make_confirm_string, send_email
 import datetime
 from Login.models import User
 from django.views import View
-from captcha.models import CaptchaStore
-from captcha.helpers import captcha_image_url
+from django.contrib import messages
+from django.contrib.auth.hashers import make_password,check_password
+
 
 
 # 登录视图
@@ -36,7 +37,7 @@ def login(request):
                         if not user.has_confirmed:
                             message = "该用户还未通过邮件确认,请先去邮箱确认!"
                             return render(request, 'Login/login.html', locals())
-                        if user.password == password:
+                        if user.password == make_password(password,"TGou",hasher='pbkdf2_sha1'):
                             # 在session中添加用户状态或者信息
                             request.session['is_login'] = True
                             # request.session['user_id'] = user.id
@@ -56,8 +57,8 @@ def login(request):
 
 # 注册视图
 def register(request):
-    if request.session.get('is_login', None):
-        # 登录状态不允许注册。你可以修改这条原则！
+    if request.session.get('is_login',None):
+        # 登录状态不允许注册。
         return redirect("/api/v1.0/TGou/index")
     if request.method == "POST":
         register_form = RegisterForm(request.POST)
@@ -83,7 +84,7 @@ def register(request):
                     return render(request, 'Login/register.html', locals())
 
                 # 当一切都OK的情况下，创建新用户
-                new_user = models.User.objects.create(name=username, password=password1, email=email, sex=sex)
+                new_user = models.User.objects.create(name=username, password=make_password(password1,"TGou",hasher='pbkdf2_sha1'), email=email, sex=sex)
                 # 生成code,用于确认邮件请求
                 code = make_confirm_string(new_user)
                 # 发送邮件
@@ -139,35 +140,26 @@ def user_confirm(request):
 
 
 # 用户个人信息
-class UserInfo(View):
-    def get(self, request):
-        info = '用户不存在'
-        username = request.session.get('user_name')
-        if username:
-            user = User.objects.get(name=username)
-            user_sex = user.sex
-            user_email = user.email
-            user_name = user.name
-            user_address = user.shopping_address
-            return render(request, 'TGou_page/user_info.html',
-                          {'user_sex': user_sex, 'user_email': user_email, 'user_name': user_name,
-                           'user_address': user_address})
-        return render(request, 'TGou_page/user_info.html', {'info': info})
-
-    def post(self, request):
-        username = request.session.get('user_name')
-        if username:
-            user = User.objects.get(name=username)
-            if user:
-                address = request.POST.get('address')
-                user.shopping_address = address
-                user.save()
-                message = '新的地址保存成功'
-                return render(request, 'TGou_page/save_success.html', {'message': message})
-            return HttpResponse('用户信息不存在')
-        return HttpResponse('请先登陆在尝试添加')
-
-
+def UserInfo(request):
+    info = '用户不存在'
+    username = request.session.get('user_name')
+    user = User.objects.get(name=username)
+    user_sex = user.sex
+    user_email = user.email
+    user_name = user.name
+    user_address = user.shopping_address
+    if request.method == "GET":
+        return render(request, 'TGou_page/user_info.html', locals())
+    if request.method=="POST":
+        address = request.POST.get('address')
+        if  user.shopping_address != address:
+            user.shopping_address = address
+            user.save()
+            messages.error(request, '新的地址保存成功!')
+            return render(request,'TGou_page/user_info.html',locals())
+        else:
+            messages.error(request, '地址没有做出改变!')
+            return render(request,'TGou_page/user_info.html',locals())
 # 修改密码,邮件确认
 def modify_psd(request):
     if request.method == "POST":
@@ -178,7 +170,7 @@ def modify_psd(request):
             email = modify_psd.cleaned_data['email']
             password1 = modify_psd.cleaned_data['password1']
             password2 = modify_psd.cleaned_data['password2']
-            if password1 != password2:  # 判断两次密码是否相同
+            if make_password(password1,"TGou", hasher='pbkdf2_sha1') != make_password(password2,"TGou", hasher='pbkdf2_sha1'):  # 判断两次密码是否相同
                 message = "两次输入的密码不同！"
                 return render(request, 'Login/modify_psd.html', locals())
             else:
@@ -190,7 +182,7 @@ def modify_psd(request):
                     return render(request, 'Login/modify_psd.html', locals())
                 else:
                     print('改密码2', user.email)
-                    user.password = password1
+                    user.password =make_password(password1, "TGou", hasher='pbkdf2_sha1')
                     user.save()
                     # 生成code,用于确认邮件请求
                     code = make_confirm_string(user)

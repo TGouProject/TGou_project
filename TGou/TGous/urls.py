@@ -2,6 +2,7 @@ from django.urls import path
 from TGous import views
 
 urlpatterns = [
+    path('',views.index),
     path('index', views.index),
     path('message', views.message),
     path('mytgou', views.mytgou),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('Search', views.Search.as_view()),
     path('delete_order/<infos>', views.delete_order),
     path('404', views.page_not_found),
+
 
 
 ]

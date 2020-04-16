@@ -21,8 +21,8 @@ from TGous.views import index
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',include('TGou.TGou_versions')),
     path('api/', include('TGou.TGou_versions')),
-    path('',index),
     path('captcha/',include('captcha.urls')),
     path('refresh/',captcha_refresh),
 

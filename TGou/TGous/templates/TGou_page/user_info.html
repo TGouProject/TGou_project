@@ -1,26 +1,37 @@
 {% extends 'base.html' %}
 {% block title %}{{ user_name }}的个人信息{% endblock %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="user_info" method="post">
-    {% csrf_token %}
-    {% if user_name %}
-        <p>用户名:{{ user_name }}</p>
-        <p>邮箱:{{ user_email }}</p>
-        <p>性别:{{ user_sex }}</p>
-        收获地址:<input type="text" name="address" value={{ user_address }}>
-        <input type="submit" value="修改">
-    {% else %}
-        <p>{{ info }}</p>
-    {% endif %}
-</form>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ user_name }}个人信息</title>
+        {% load static %}
+    </head>
+    <body style="background: url({% static "images/2001513.jpg" %});opacity: 0.8">
+    <form action="user_info" method="post">
+        {% csrf_token %}
+        {% if user_name %}
+            <ul class="list-group">
+                <li class="list-group-item">用户名:{{ user_name }}</li>
+                <li class="list-group-item">邮箱:{{ user_email }}</li>
+                <li class="list-group-item">性别:{{ user_sex }}</li>
+                <li class="list-group-item">
+                    收获地址:<input style="border: 1px solid transparent" type="text" name="address" value={{ user_address }}>
+                    <input type="submit" value="修改">
+                </li>
+                <li class="list-group-item">
+                    {% for message in messages %}
+                        <div style="background-color: red ; color: white"
+                             class="alert aler-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </li>
+            </ul>
+        {% else %}
+            <p>{{ info }}</p>
+        {% endif %}
+    </form>
 
-</body>
-</html>
+    </body>
+    </html>
 {% endblock %}

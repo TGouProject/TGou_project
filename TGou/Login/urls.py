@@ -7,8 +7,7 @@ urlpatterns = [
     path('register', views.register),
     path('logout', views.logout),
     path('confirm', views.user_confirm),
-    path('user_info', views.UserInfo.as_view()),
-    path('modify_psd', views.modify_psd),
-    # path('captcha/', include('captcha.urls')),
-    # path('refresh/',captcha_refresh)
+    # path('user_info', views.UserInfo.as_view()),
+    path('user_info', views.UserInfo),
+    path('modify_psd', views.modify_psd)
 ]
