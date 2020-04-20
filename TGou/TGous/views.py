@@ -54,22 +54,32 @@ def user_longin_state(request):
         return username
 
 
+
+def outer(fun):
+    def inner(request):
+        if request.session.get('is_login', None):
+            return fun(request)
+        return redirect('/api/v1.0/TGou/login')
+
+    return inner
+
 # 我的TGou
+@outer
 def mytgou(request):
     try:
-        if user_longin_state(request):
-            goods_infos = AllOrders.objects.all()
-            print(goods_infos)
-            users = request.session.get('user_name')
-            user = User.objects.get(name=users)
-            infos = []
-            for i in goods_infos:
-                if i.user == user:
-                    infos.append(i)
-            print('infos:', infos)
-            return render(request, 'TGou_page/mytgou.html', {'infos': infos})
-        else:
-            return redirect('/api/v1.0/TGou/login')
+        # if user_longin_state(request):
+        goods_infos = AllOrders.objects.all()
+        print(goods_infos)
+        users = request.session.get('user_name')
+        user = User.objects.get(name=users)
+        infos = []
+        for i in goods_infos:
+            if i.user == user:
+                infos.append(i)
+        print('infos:', infos)
+        return render(request, 'TGou_page/mytgou.html', {'infos': infos})
+        # else:
+        #     return redirect('/api/v1.0/TGou/login')
     except:
         return redirect('/api/v1.0/TGou/404')
 
@@ -120,7 +130,7 @@ class ByShopping(View):
                 # print('infos', infos)
                 usernames = user_longin_state(request)
 
-                return render(request, 'TGou_page/shopping_car.html',locals())
+                return render(request, 'TGou_page/shopping_car.html', locals())
             return redirect('/api/v1.0/TGou/login')
         except:
             return redirect('/api/v1.0/TGou/404')
