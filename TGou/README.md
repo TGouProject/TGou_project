@@ -16,17 +16,23 @@
 
 2. 项目层更改`settings.py`中的数据库配置.
 
-3. 数据库迁移: `python manage.py makemigrations`
+3. 数据库迁移:
 
-  `python manage.py migrate`
+   `python manage.py makemigrations`
+
+​     `python manage.py migrate`
 
 4. 创建超级用户:
 
-  `python manage.py createsuperuser`
+   `python manage.py createsuperuser`
 
-5. 运行项目:
+5. 配置文件中填写数据库信息,邮件等信息;
 
-  `python manage.py runserver`
+    	配置文件路径:`TGou_project\TGou\TGous\static\email_pwd.py`
+
+6. 运行项目:
+
+     `python manage.py runserver`
 
   
 
